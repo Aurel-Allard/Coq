@@ -1,3 +1,48 @@
-.gift-banner {
+#gift-banner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  background-color: $light-gray;
+  background-size: cover !important;
+}
+
+.gift-content {
   position: relative;
+  height: calc(100vh - 50px);
+}
+
+.gift-pst {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  p {
+    margin: 0;
+    color: $gray;
+  }
+}
+
+.gift-hk {
+  position: absolute;
+  top: 52%;
+  right: 205px;
+  p {
+  text-align: right;
+  font-weight: 500;
+  margin: 15px;
+  color: $medium-gray;
+  }
+}
+
+.gift-image {
+  position: absolute;
+  top: 40%;
+  right: -35px;
+}
+
+h2 {
+  margin: 0;
+  color: $main;
+  font-size: 35px;
+  font-weight: 700;
 }
