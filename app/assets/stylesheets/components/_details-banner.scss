@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-around;
   margin: 0 100px;
+  opacity: 0;
 }
 
 .card {
@@ -39,7 +40,7 @@
 
 .card:hover {
   transform: scale(1.075);
-  box-shadow: 0 0 16px 4px rgba(227, 0, 84, 0.3);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .fa-style-2 {
