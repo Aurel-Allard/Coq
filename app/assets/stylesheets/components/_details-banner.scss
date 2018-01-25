@@ -1,9 +1,9 @@
 #details-banner {
-  height: calc(100vh - 50px);
+  // height: calc(100vh - 50px);
+  box-sizing: border-box;
   background-color: white;
-  background-size: cover !important;
   h2 {
-    margin: 0;
+    margin: 10px 0;
     padding-top: 35px;
     color: $main
   }
@@ -51,4 +51,24 @@
 }
 .card-activity {
   background-color: #5ED5D1;
+}
+
+@media (max-width: 800px) {
+  #details-banner {
+    height: auto;
+  }
+  .fa-style-2 {
+    margin-top: 5px;
+    font-size: 35px;
+  }
+  .detail-cards {
+    display: block;
+  }
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+  h3 {
+    margin: 10px;
+  }
 }

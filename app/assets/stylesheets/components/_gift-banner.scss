@@ -4,12 +4,11 @@
   flex-direction: column;
   height: calc(100vh - 50px);
   background-color: $light-gray;
-  background-size: cover !important;
 }
 
 .gift-content {
   position: relative;
-  height: calc(100vh - 50px);
+  height: 100%;
 }
 
 .gift-pst {
@@ -18,7 +17,7 @@
   left: 35px;
   p {
     margin: 0;
-    color: $gray;
+    color: $medium-gray;
   }
 }
 
@@ -37,7 +36,7 @@
 .gift-image {
   position: absolute;
   top: 40%;
-  right: -35px;
+  right: 0px;
 }
 
 h2 {
@@ -45,4 +44,31 @@ h2 {
   color: $main;
   font-size: 35px;
   font-weight: 700;
+}
+
+.btn-primary {
+  margin: 40px auto;
+}
+
+@media (max-width: 800px) {
+  #gift-banner {
+    height: auto;
+    box-sizing: border-box;
+  }
+  .gift-pst {
+    position: static;
+    margin: 20px;
+  }
+  .gift-hk {
+    position: static;
+    margin: 35px;
+    h2, p {
+      text-align: center;
+    }
+  }
+  .gift-image {
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
 }

@@ -44,3 +44,21 @@ p {
   text-align: left;
   font-weight: 300;
 }
+
+@media (max-width: 800px) {
+  #home-banner {
+    box-sizing: border-box;
+  }
+  .empty-space {
+    display: none;
+  }
+  .headline {
+    display: block;
+    height: auto;
+    box-sizing: border-box;
+    h1, p {
+      text-align: center;
+      margin: 10px 15px;
+    }
+  }
+}
