@@ -1,0 +1,85 @@
+#how-banner {
+  // height: calc(100vh - 50px);
+  box-sizing: border-box;
+  background-color: white;
+  h2 {
+    margin: 0;
+    padding-top: 35px;
+    color: $main
+  }
+}
+
+.how-pst {
+  position: relative;
+  height: 200px;
+}
+
+.pst-summary {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  height: 200px;
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+  right: 0;
+  left: 0;
+  background-color: $black;
+  h2 {
+    padding-bottom: 20px;
+  }
+}
+
+.pst-line {
+  display: flex;
+  align-items: center;
+
+  .pst-bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: $medium-gray;
+    border-radius: 30px;
+    margin-left: 40px;
+  }
+  .pst-text {
+    color: white;
+    margin-left: 40px;
+  }
+}
+
+.fa-style-1 {
+  color: white;
+  font-size: 18px;
+}
+
+.pst-image {
+  position: absolute;
+  top: 50px;
+  height: 120px;
+  width: 100%;
+  background-image: url('how-banner.jpg');
+  background-position: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 35px;
+}
+
+.step {
+  width: 320px;
+  h3 {
+    font-weight: 700;
+  }
+  p {
+    text-align: center;
+    margin: 0 0 25px 0;
+    font-size: 14px;
+  }
+}

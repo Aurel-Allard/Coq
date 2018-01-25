@@ -1,4 +1,4 @@
-<div class="home-banner">
+<div id="home-banner">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -11,12 +11,64 @@
         <div class="headline">
           <div class="empty-space"></div>
           <h1><span>Quand rien n'est prévu, tout est possible</span></h1>
-          <p>La France authentique et inconnue à moins de 2h30 de chez vous, le temps d'un week-end.</p>
+          <p>La France authentique et inconnue à moins de 2h30 de chez vous, le temps d'un long week-end.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="how-banner"></div>
-<div class="gift-banner"></div>
+<div id="how-banner" class="text-center">
+  <h2>Comment Coq-trotter sereinement ?</h2>
+  <p>Besoin d’un week-end et jamais d’idées ? De conquérir des villes magnifiques et peu connus ? Ou simplement de chiller pépouze à la mer dans un cadre inspirant dont vous n’avez jamais entendu parlé ?</p>
+  <div class="how-pst">
+    <div class="pst-image"></div>
+    <div class="pst-summary">
+      <div class="pst-line">
+        <div class="pst-bullet">
+          <i class="fa fa-train fa-style-1" aria-hidden="true"></i>
+        </div>
+        <div class="pst-text">2h30 max de train</div>
+      </div>
+      <div class="pst-line">
+        <div class="pst-bullet">
+          <i class="fa fa-bed fa-style-1" aria-hidden="true"></i>
+        </div>
+        <div class="pst-text">Une à trois nuits</div>
+      </div>
+      <div class="pst-line">
+        <div class="pst-bullet">
+          <i class="fa fa-thumbs-up fa-style-1" aria-hidden="true"></i>
+        </div>
+        <div class="pst-text">Lieu surprise d'exception</div>
+      </div>
+      <h2>À partir de 90€/pers</h2>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step text-center">
+      <%= image_tag "calendar.png", height: "60px" %>
+      <h3>JE CONFIGURE MON TRAJET</h3>
+      <p>
+        Je saisie le nombre de voyageurs, mes dates, ainsi que le type d’environnement et de logement dans lequel je désire partir. De toute façon ça sera top
+      </p>
+    </div>
+    <div class="step text-center">
+      <%= image_tag "map.png", height: "60px" %>
+      <h3>JE DÉFINIE MES PRÉFÉRENCES</h3>
+      <p>
+        J’en profite pour préciser le genre de lieux que j’aimerais découvrir et si je désire réserver une activité sur place. L’équipe se chargera alors de vous préparer un trip aux petits oignons 👍
+      </p>
+    </div>
+    <div class="step text-center">
+      <%= image_tag "backpack.png", height: "60px" %>
+      <h3>SURPRISE 😍</h3>
+      <p>
+        C’est le week-end, à vous le grand air ! Un horaire, une gare proche de chez-vous…vous voilà partis vers une destination qui ne vous sera révélée que 24h avant de monter dans le train.
+      </p>
+    </div>
+  </div>
+</div>
+<div id="gift-banner">
+  <%= image_tag "gift", height: "250px" %>
+</div>
 
