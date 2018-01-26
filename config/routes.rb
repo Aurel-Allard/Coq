@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'pages/contact'
+  resources :journeys
+  root to: 'journeys#index'
 
+  get 'pages/contact'
   get 'pages/about'
 
   root to: 'pages#home'
