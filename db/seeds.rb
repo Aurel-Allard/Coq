@@ -12,7 +12,7 @@ puts 'Creating false journeys'
 4.times do
   journey = Journey.new(
     destination_type: ['ville', 'campagne', 'mer'].sample,
-    people_count: (0..6).to_a.sample
+    people_count: (1..6).to_a.sample
   )
   journey.save!
 end

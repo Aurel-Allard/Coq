@@ -1,7 +1,7 @@
 class JourneysController < ApplicationController
-  include Wicked::Wizard
-
-  steps :first_step, :second_step
+  def index
+    @journeys = Journey.all
+  end
 
   def new
     @journey = Journey.new
@@ -11,6 +11,10 @@ class JourneysController < ApplicationController
     @journey = Journey.new(journey_params)
     @journey.save!
     redirect_to journey_path(@journey)
+  end
+
+  def show
+    # @journey = Journey.find(params[:id])
   end
 
   def journey_params

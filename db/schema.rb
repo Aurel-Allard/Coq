@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126125850) do
+ActiveRecord::Schema.define(version: 20180127164936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "details", force: :cascade do |t|
+    t.boolean "is_a_surprise"
+    t.string "origin"
+    t.date "date"
+    t.string "housing_type"
+    t.string "activity_type"
+    t.text "points_of_attention"
+    t.integer "price"
+    t.bigint "journey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["journey_id"], name: "index_details_on_journey_id"
+  end
 
   create_table "journeys", force: :cascade do |t|
     t.boolean "is_a_surprise"
@@ -29,4 +43,5 @@ ActiveRecord::Schema.define(version: 20180126125850) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "details", "journeys"
 end

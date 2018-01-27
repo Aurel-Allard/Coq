@@ -1,3 +1,3 @@
 class Journey < ApplicationRecord
-  validates :origin, :date, presence: true
+  has_one :detail, dependent: :destroy
 end
