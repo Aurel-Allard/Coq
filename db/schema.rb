@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20180127164936) do
 
   create_table "details", force: :cascade do |t|
     t.boolean "is_a_surprise"
-    t.string "origin"
     t.date "date"
     t.string "housing_type"
     t.string "activity_type"
@@ -30,15 +29,9 @@ ActiveRecord::Schema.define(version: 20180127164936) do
   end
 
   create_table "journeys", force: :cascade do |t|
-    t.boolean "is_a_surprise"
-    t.integer "people_count"
+    t.string "people_count"
     t.string "origin"
     t.string "destination_type"
-    t.date "date"
-    t.string "housing_type"
-    t.string "activity_type"
-    t.text "points_of_attention"
-    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,5 +3,6 @@
 <% @journeys.each do |journey| %>
   <h3>Séjour <%= journey.id %></h3>
   <p>Destination : <%= journey.destination_type %></p>
-  <p>Nombre de personnes : <%= journey.people_count %></p>
+  <p>Au départ de : <%= journey.origin %></p>
+  <p>Nombre : <%= journey.people_count %></p>
 <% end %>

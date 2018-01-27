@@ -10,7 +10,7 @@ class JourneysController < ApplicationController
   def create
     @journey = Journey.new(journey_params)
     @journey.save!
-    redirect_to journey_path(@journey)
+    redirect_to journeys_path
   end
 
   def show

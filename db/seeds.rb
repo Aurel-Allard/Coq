@@ -11,8 +11,9 @@ require 'faker'
 puts 'Creating false journeys'
 4.times do
   journey = Journey.new(
-    destination_type: ['ville', 'campagne', 'mer'].sample,
-    people_count: (1..6).to_a.sample
+    origin: ['Paris', 'Lille', 'Bordeaux'].sample,
+    people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
+    destination_type: ['Ville', 'Campagne', 'Mer'].sample
   )
   journey.save!
 end
