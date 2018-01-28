@@ -15,6 +15,13 @@ puts 'Creating false journeys'
     people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
     destination_type: ['Ville', 'Campagne', 'Mer'].sample
   )
+
+  all_details = Detail.new(
+    is_a_surprise: ['true', 'false'].sample
+    )
+
+  journey.detail = all_details
+  all_details.save!
   journey.save!
 end
 puts 'Finished!'
