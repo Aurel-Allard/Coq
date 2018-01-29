@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
 
 require 'faker'
 
@@ -17,7 +11,11 @@ puts 'Creating false journeys'
   )
 
   all_details = Detail.new(
-    is_a_surprise: ['true', 'false'].sample
+    is_a_surprise: ['true', 'false'].sample,
+    date: Date.new(2018,2,3),
+    housing_type: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme' ].sample,
+    activity_type: ['Aucune', 'Sport', 'Gastronomie', 'Culture' ].sample,
+    points_of_attention: 'n.a.'
     )
 
   journey.detail = all_details

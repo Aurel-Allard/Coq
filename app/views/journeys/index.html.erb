@@ -1,7 +1,7 @@
 <p>Line</p>
 <h1>Journeys</h1>
 <% @journeys.each do |journey| %>
-  <h3>Séjour <%= journey.id %></h3>
+  <h3>Séjour #<%= journey.id %></h3>
   <p>Date : <%= journey.detail.date %></p>
   <p>Au départ de : <%= journey.origin %></p>
   <p>Nombre : <%= journey.people_count %></p>
