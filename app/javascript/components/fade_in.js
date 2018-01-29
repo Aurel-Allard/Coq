@@ -1,6 +1,5 @@
 /* Every time the window is scrolled ... */
 function fadeIn() {
-  console.log("a");
   $(window).scroll(function(){
         //alert("Hey, You Hovered!");
         $('.fade-in').each(function(i){
