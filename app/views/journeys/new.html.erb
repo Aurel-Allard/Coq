@@ -1,0 +1,27 @@
+<div id="home-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="headline">
+          <div class="empty-space"></div>
+          <h1><span>Quand rien n'est prévu, tout est possible</span></h1>
+          <p>La France authentique et inconnue à moins de 2h30 de chez vous, le temps d'un long week-end.</p>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <div class="home-form text-center">
+          <h2>I am a Franchouillard</h2>
+          <div class="home-form-content">
+            <%= simple_form_for @journey do |f| %>
+              <%= f.input :origin, prompt: "D'où partez-vous ?", label: false, collection: ['Paris'] %>
+              <%= f.input :people_count, prompt: "Nombre de personnes", label: false, collection: ['1 trotteur', '2 trotteurs', '3 trotteurs', '4 trotteurs', '5 trotteurs', '6 trotteurs',] %>
+              <%= f.input :destination_type, prompt: "Type de destination", label: false, collection: ['Ville', 'Mer', 'Campagne'] %>
+              <%= f.submit "JE REDÉCOUVRE LE PAYS !", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

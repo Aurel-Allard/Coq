@@ -1,0 +1,22 @@
+.details-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 600px;
+  margin: 35px auto 0 auto;
+  h3 {
+    color: $gray;
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+.details-form-content {
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .details-form {
+    display: block;
+    width : 80%;
+    margin: 35px auto;
+  }
+}
