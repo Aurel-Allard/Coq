@@ -2,7 +2,7 @@
 <h1>Journeys</h1>
 <% @journeys.each do |journey| %>
   <h3>Séjour #<%= journey.id %></h3>
-  <p>Date : <%= journey.detail.date %></p>
+  <p class="date">Date : <%= journey.detail.date %></p>
   <p>Au départ de : <%= journey.origin %></p>
   <p>Nombre : <%= journey.people_count %></p>
   <p>Destination : <%= journey.destination_type %></p>
@@ -11,3 +11,14 @@
   <p>Activité : <%= journey.detail.activity_type %></p>
   <p>Point(s) d'attention : <%= journey.detail.points_of_attention %></p>
 <% end %>
+
+
+<script>
+    $(document).ready(function() {
+      $('.date').each(function (index, dateElem) {
+        var $dateElem = $(dateElem);
+        var formatted = moment($dateElem.text(), 'YYYY-MM-DD').format('MMMM D');
+        $dateElem.text(formatted);
+       })
+     })
+</script>
