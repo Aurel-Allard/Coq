@@ -3,6 +3,9 @@
     <div class="details-form-content">
       <%= simple_form_for [@journey, @detail] do |f| %>
         <h3>Dates</h3>
+        <p>Date: <input type="text" id="datepicker"></p>
+        <input type="text" class="daterange"/>
+
         <%= f.input :date, label: false %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
         <h3>Options de logement</h3>
@@ -17,6 +20,24 @@
   </div>
 </div>
 
- <script type='text/javascript'>
-   $('#mydiv').show();
- </script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+<script>
+    if (!window.moment) {
+        document.write('<script src="assets/plugins/moment/moment.min.js"><\/script>');
+    }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('input[class="daterange"]').daterangepicker();
+  });
+</script>
