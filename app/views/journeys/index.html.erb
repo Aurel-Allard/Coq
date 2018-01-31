@@ -11,14 +11,3 @@
   <p>Activité : <%= journey.detail.activity_type %></p>
   <p>Point(s) d'attention : <%= journey.detail.points_of_attention %></p>
 <% end %>
-
-
-<script>
-    $(document).ready(function() {
-      $('.date').each(function (index, dateElem) {
-        var $dateElem = $(dateElem);
-        var formatted = moment($dateElem.text(), 'YYYY-MM-DD').format('MMMM D');
-        $dateElem.text(formatted);
-       })
-     })
-</script>
