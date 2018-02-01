@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :journeys, only: [:new, :create, :show, :index] do
     resources :details, only: [ :new, :create ]
+    resources :clients, only: [ :new, :create ]
   end
   root to: 'journeys#new'
 

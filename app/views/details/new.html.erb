@@ -3,9 +3,10 @@
     <div class="details-form-content">
       <%= simple_form_for [@journey, @detail] do |f| %>
         <h3>Dates</h3>
-        <p>Date: <input type="text" class="daterange" value="01/01/2015 - 01/31/2015" /></p>
+        <p><input type="text" id="daterange"></p>
+        <p id="detail_date"></p>
 
-        <%= f.input :date, #input_html: { onclick: 'testFunction()' }, label: false %>
+        <%= f.input :date %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
         <h3>Options de logement</h3>
         <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme' ] %>
@@ -24,8 +25,12 @@
 
 <script type="text/javascript"></script>
 <script>
+<<<<<<< HEAD
+  $('#btn-date').click(function(){
+
+  });
   $(function() {
-    $('input[class="daterange"]').daterangepicker({
+    $('input[id="daterange"]').daterangepicker({
         "autoApply": true,
         "dateLimit": {
             "days": 3
@@ -71,4 +76,10 @@
         }
     });
   });
+
+  $(document).ready(function(){
+    $("#daterange").change(function(){
+       $("#detail_date").html("Du " + $('#daterange').val());
+    });
+   });
 </script>
