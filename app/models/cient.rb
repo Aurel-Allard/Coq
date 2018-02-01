@@ -1,0 +1,2 @@
+class Cient < ApplicationRecord
+end
