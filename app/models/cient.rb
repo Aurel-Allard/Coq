@@ -1,2 +1,0 @@
-class Cient < ApplicationRecord
-end

@@ -5,7 +5,7 @@ class DetailsController < ApplicationController
     end
 
     def create
-      @detail = Detail.new(review_params)
+      @detail = Detail.new(details_params)
       @detail.journey = Journey.find(params[:journey_id])
       @detail.save!
       redirect_to journeys_path
@@ -13,7 +13,7 @@ class DetailsController < ApplicationController
 
     private
 
-    def review_params
+    def details_params
       params.require(:detail).permit(:is_a_surprise, :date, :housing_type, :points_of_attention)
     end
 end

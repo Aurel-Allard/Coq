@@ -1,0 +1,16 @@
+<div id="details-banner">
+  <div class="details-form">
+    <div class="details-form-content">
+      <%= simple_form_for [@journey, @client] do |f| %>
+        <%= f.input :gender %>
+        <%= f.input :name %>
+        <%= f.input :surname %>
+        <%= f.input :address %>
+        <%= f.input :birth_date %>
+        <%= f.input :mail %>
+        <%= f.input :contact %>
+        <%= f.submit "SUIVANT", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
