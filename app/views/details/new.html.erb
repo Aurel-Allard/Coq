@@ -3,9 +3,9 @@
     <div class="details-form-content">
       <%= simple_form_for [@journey, @detail] do |f| %>
         <h3>Dates</h3>
-        <p>Date: <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" /></p>
+        <p>Date: <input type="text" class="daterange" value="01/01/2015 - 01/31/2015" /></p>
 
-        <%= f.input :date, label: false %>
+        <%= f.input :date, #input_html: { onclick: 'testFunction()' }, label: false %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
         <h3>Options de logement</h3>
         <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme' ] %>
@@ -19,21 +19,56 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  $(function() {
-      $('input[name="daterange"]').daterangepicker({
-          "autoApply": true,
-          "dateLimit": {
-              "days": 3
-          },
-          "startDate": "1/23/2018",
-          "endDate": "01/29/2018"
-      }, function(start, end, label) {
-        console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-      });
-  });
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
-  var currentdate = new Date();
-  var datetime = "Last Sync: " + currentdate.getDay() + "/"+currentdate.getMonth() + "/" + currentdate.getFullYear();
-  console.log(datetime);
+<script type="text/javascript"></script>
+<script>
+  $(function testFunction() {
+    $('input[class="daterange"]').daterangepicker({
+        "autoApply": true,
+        "dateLimit": {
+            "days": 3
+        },
+        "locale": {
+          "format": "DD/MM/YYYY",
+          "separator": " - ",
+          "applyLabel": "Valider",
+          "cancelLabel": "Annuler",
+          "fromLabel": "Du",
+          "toLabel": "Au",
+          "customRangeLabel": "Custom",
+          "weekLabel": "W",
+          "daysOfWeek": [
+              "Di",
+              "Lu",
+              "Ma",
+              "Me",
+              "Je",
+              "Ve",
+              "Sa"
+          ],
+          "monthNames": [
+              "Janvier",
+              "Février",
+              "Mars",
+              "Avril",
+              "May",
+              "Juin",
+              "Juillet",
+              "Août",
+              "Septembre",
+              "Octobre",
+              "Novembre",
+              "Décembre"
+          ],
+          "firstDay": 1
+        },
+        "startDate": moment().format('DD/MM/YYYY'),
+        "endDate": moment().format('DD/MM/YYYY'),
+        "isInvalidDate": function(date) {
+          return (date.day() == 1 || date.day() == 2 || date.day() == 3);
+        }
+    });
+  });
 </script>
