@@ -2,9 +2,10 @@
   <div class="details-form">
     <div class="details-form-content">
       <%= simple_form_for [@journey, @detail] do |f| %>
+        <h2>Mon séjour</h2>
         <h3>Dates</h3>
-        <p><input type="text" id="daterange"></p>
-        <p id="detail_date"></p>
+        <!-- <p><input type="text" id="daterange"></p>
+        <p id="detail_date"></p> -->
 
         <%= f.input :date %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
@@ -20,12 +21,11 @@
   </div>
 </div>
 
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
 <script type="text/javascript"></script>
 <script>
-<<<<<<< HEAD
   $('#btn-date').click(function(){
 
   });
@@ -82,4 +82,4 @@
        $("#detail_date").html("Du " + $('#daterange').val());
     });
    });
-</script>
+</script> -->
