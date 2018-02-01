@@ -1,7 +1,5 @@
 require 'date'
 
-require 'faker'
-
 puts 'Creating false journeys'
 4.times do
   journey = Journey.new(

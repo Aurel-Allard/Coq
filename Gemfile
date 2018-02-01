@@ -15,10 +15,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'faker'
+gem 'turbolinks', '~> 5.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'turbolinks'
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
