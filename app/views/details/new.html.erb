@@ -3,8 +3,7 @@
     <div class="details-form-content">
       <%= simple_form_for [@journey, @detail] do |f| %>
         <h3>Dates</h3>
-        <p>Date: <input type="text" id="datepicker"></p>
-        <input type="text" class="daterange"/>
+        <p>Date: <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" /></p>
 
         <%= f.input :date, label: false %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
@@ -22,6 +21,19 @@
 
 <script type="text/javascript">
   $(function() {
-      $('input[name="daterange"]').daterangepicker();
+      $('input[name="daterange"]').daterangepicker({
+          "autoApply": true,
+          "dateLimit": {
+              "days": 3
+          },
+          "startDate": "1/23/2018",
+          "endDate": "01/29/2018"
+      }, function(start, end, label) {
+        console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+      });
   });
+
+  var currentdate = new Date();
+  var datetime = "Last Sync: " + currentdate.getDay() + "/"+currentdate.getMonth() + "/" + currentdate.getFullYear();
+  console.log(datetime);
 </script>
