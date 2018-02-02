@@ -1,21 +1,22 @@
 .details-form {
   background-color: rgba(255, 255, 255, 0.9);
-  width: 800px;
+  width: 600px;
   margin: 35px auto 0 auto;
   h3 {
-    color: $gray;
     text-align: left;
     font-weight: 600;
   }
-  color: $gray !important;
+  color: $gray;
 }
 
 .details-form-content {
   padding: 20px;
 }
 
-.form-control {
-  border: 1px solid #CCC !important;
+.client-form {
+  border: none;
+  border-bottom: 1px solid #CCC;
+  box-shadow: none;
 }
 
 @media (max-width: 800px) {

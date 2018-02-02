@@ -10,9 +10,9 @@
         <%= f.input :date %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
         <h3>Options de logement</h3>
-        <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme' ] %>
+        <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme'] %>
         <h3>Activité optionnelle</h3>
-        <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture' ] %>
+        <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture'] %>
         <h3>Points d'attention</h3>
         <%= f.input :points_of_attention, label: false %>
         <%= f.submit "SUIVANT", class: "btn btn-primary" %>
