@@ -9,6 +9,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string :phone
       t.string :mail
       t.boolean :contact
+      t.references :journey, foreign_key: true
 
       t.timestamps
     end
