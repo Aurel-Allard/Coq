@@ -8,7 +8,7 @@ class DetailsController < ApplicationController
       @detail = Detail.new(details_params)
       @detail.journey = Journey.find(params[:journey_id])
       @detail.save!
-      redirect_to journeys_path
+      redirect_to new_journey_client_path
     end
 
     private

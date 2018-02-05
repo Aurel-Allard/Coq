@@ -2,13 +2,14 @@
   <div class="details-form">
     <div class="details-form-content">
       <%= simple_form_for [@journey, @client] do |f| %>
-        <%= f.input :gender %>
-        <%= f.input :name %>
-        <%= f.input :surname %>
-        <%= f.input :address %>
-        <%= f.input :birth_date %>
-        <%= f.input :mail %>
-        <%= f.input :contact %>
+      <h2>Mes informations</h2>
+        <%= f.input :name, label: false, placeholder: "Prénom", input_html: { class: 'client-form' }%>
+        <%= f.input :surname, label: false, placeholder: "Nom de famille", input_html: { class: 'client-form' }%>
+        <%= f.input :gender, prompt: "Sexe", label: false, collection: ['Femme', 'Homme'], input_html: { class: 'client-form' } %>
+        <%= f.input :address, label: false, placeholder: "Adresse", input_html: { class: 'client-form' }%>
+        <%= f.input :birth_date, label: "Date de naissance", input_html: { class: 'client-form' }%>
+        <%= f.input :mail, label: false, placeholder: "email", input_html: { class: 'client-form' }%>
+        <%= f.input :contact, label: "Je préfère être contacté par sms"%>
         <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
