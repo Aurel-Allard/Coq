@@ -1,7 +1,7 @@
 #details-banner {
+  position: relative;
   background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), url('banner.jpg');
   color: white;
   height: 100vh;
   background-size: cover !important;
-  display: absolute;
 }
