@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20180201193643) do
     t.string "phone"
     t.string "mail"
     t.boolean "contact"
+    t.bigint "journey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["journey_id"], name: "index_clients_on_journey_id"
   end
 
   create_table "details", force: :cascade do |t|
@@ -49,5 +51,6 @@ ActiveRecord::Schema.define(version: 20180201193643) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "clients", "journeys"
   add_foreign_key "details", "journeys"
 end
