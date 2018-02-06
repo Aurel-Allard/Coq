@@ -17,10 +17,13 @@
       </tr>
     </thead>
     <tbody>
+      <% i = 0 %>
       <% @journeys.each do |journey| %>
-        <tr>
-          <td>#<%= journey.id %></th>
-          <td><%= journey.client.name + " " + journey.client.surname %></td>
+        <% i += 1 %>
+        <!-- data-target="#myModal" -->
+        <tr data-toggle="modal" data-id="<%= i %>" >
+          <td>#<%= journey.id %></td>
+          <td class="journey-client"><%= journey.client.name + " " + journey.client.surname %></td>
           <td><%= journey.detail.date %></td>
           <td></td>
           <td><%= journey.origin %></td>
@@ -30,8 +33,42 @@
           <td><%= journey.detail.housing_type %></td>
           <td><%= journey.detail.activity_type %></td>
           <td><%= journey.detail.points_of_attention %></td>
+          <td><button type="button" class="btn btn-outline-primary">Infos client</button></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informations client</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".btn-outline-primary").click(function() {
+      var tr = $(this).parent().parent().attr("data-id");
+      var age = 3;
+      var textIns = '<%= @journeys.find(' + age + ').origin %>';
+      $(".modal-body").html(textIns);
+      $('#myModal').modal();
+      console.log("I'm " + age + " years old! %");
+    });
+  });
+</script>

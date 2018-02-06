@@ -3,7 +3,7 @@ require 'faker'
 
 puts 'Creating false journeys'
 
-4.times do
+10.times do
   journey = Journey.new(
     origin: ['Paris', 'Lille', 'Bordeaux'].sample,
     people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
@@ -36,12 +36,3 @@ puts 'Creating false journeys'
   journey.save!
 end
 puts 'Finished!'
-
-# t.string "name"
-#     t.string "surname"
-#     t.string "gender"
-#     t.string "address"
-#     t.date "birth_date"
-#     t.string "phone"
-#     t.string "mail"
-#     t.boolean "contact"
