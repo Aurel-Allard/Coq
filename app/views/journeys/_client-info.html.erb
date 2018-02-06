@@ -4,25 +4,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">Réservé par <%= journey.client.name + " " + journey.client.surname %></h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
-        <p><strong>Courriel :</strong>
-          <%= journey.client.mail %></p>
-        <p><strong>Sexe :</strong>
-          <%= journey.client.gender %></p>
-        <p><strong>Adresse :</strong>
-          <%= journey.client.address %></p>
-        <p><strong>Date de naissance :</strong>
-          <%= journey.client.birth_date %></p>
-        <p><strong>Téléphone :</strong>
-          <%= journey.client.phone %></p>
-        <p><strong>Contact sms :</strong>
-          <%= journey.client.contact ? "Non" : "Oui" %></p>
-        <p><strong>Points d'attention :</strong>
-          <%= journey.detail.points_of_attention %></p>
+        <div class="modal-block">
+          <p><strong>Courriel :</strong></p>
+          <p><strong>Sexe :</strong></p>
+          <p><strong>Adresse :</strong></p>
+          <p><strong>Date de naissance :</strong></p>
+          <p><strong>Téléphone :</strong></p>
+          <p><strong>Contact sms :</strong></p>
+          <p><strong>Points d'attention :</strong></p>
+        </div>
+        <div class="modal-block">
+          <p><%= journey.client.mail %></p>
+          <p><%= journey.client.gender %></p>
+          <p><%= journey.client.address %></p>
+          <p><%= journey.client.birth_date %></p>
+          <p><%= journey.client.phone %></p>
+          <p><%= journey.client.contact ? "Non" : "Oui" %></p>
+          <p><%= journey.detail.points_of_attention %></p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

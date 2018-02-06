@@ -12,9 +12,6 @@
     text-align: left;
     font-size: 20px;
   }
-  p {
-    margin: 10px 0 10px 40px;
-  }
   tr:hover td {
     background:#4E5066;
     color:#FFFFFF;
@@ -38,10 +35,22 @@
 
 .modal-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .modal-title {
   color: $main;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-block {
+  p {
+    margin: 10px 60px 10px 60px;
+  }
 }
