@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal-<%= i %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Réservé par <%= journey.client.name + " " + journey.client.surname %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Courriel: <%= journey.client.mail %></p>
+        <p>Sexe: <%= journey.client.gender %></p>
+        <p>Adresse: <%= journey.client.address %></p>
+        <p>Date de naissance: <%= journey.client.birth_date %></p>
+        <p>Téléphone: <%= journey.client.phone %></p>
+        <p>Contact: <%= journey.client.contact %></p>
+        <p>Points d'attention: <%= journey.points_of_attention %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

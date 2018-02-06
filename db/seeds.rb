@@ -21,12 +21,12 @@ puts 'Creating false journeys'
   all_clients = Client.new(
     name: Faker::Name.first_name,
     surname: Faker::Name.last_name,
-    gender: ['M', 'Mme'].sample,
+    gender: ['Homme', 'Femme'].sample,
     address: Faker::Address.street_address,
     birth_date: Faker::Date.forward(25),
     phone: Faker::PhoneNumber.cell_phone,
     mail: Faker::Internet.email,
-    contact: ['email', 'téléphone'].sample
+    contact: ['true', 'false'].sample
     )
 
   journey.detail = all_details
