@@ -21,6 +21,7 @@ gem 'jquery-ui-rails'
 gem 'momentjs-rails'
 gem 'bootstrap-daterangepicker-rails'
 gem 'faker'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
