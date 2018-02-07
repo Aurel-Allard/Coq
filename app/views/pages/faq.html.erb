@@ -1,0 +1,121 @@
+<div id="faq-content">
+  <h1>FAQ</h1>
+  <div class="faq-pattern">
+    <h3>Les réponses à vos questions se trouvent ici !</h3>
+    <h3>Vous n'avez pas trouvé votre bonheur 🤔 ? Contactez-nous ☺️  !</h3>
+  </div>
+  <ul class="accordeon">
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Qu'est-ce que Le Coq Trotteur ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">En quoi l'expérience du Coq Trotteur est-elle unique ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Combien de temps à l'avance dois-je réserver ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Pourquoi la destination reste-t-elle secrête ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Combien coûtent les séjours ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Combien de temps puis-je partir ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Comment organiser un séjour surprise ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Comment les lieux sont-ils choisis ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Et les hébergements ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Les hébergements incluent-ils le petit-déjeuner ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Je ne suis pas de nationalité française, est-ce un problème ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Pourquoi privilégiez-vous le train ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Aurai-je des indications une fois sur place ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Comment puis-je connaitre la météo sans avoir connaissance du lieu ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Est-il nécessaire que je souscrive à une assurance voyage ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+    <li class="accordeon_item">
+      <h4 class="accordeon_title">Je ne peux plus me rendre sur place le jour du départ, puis-je me faire rembourser ?</h4>
+      <div class="accordeon_content">
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  $(function(){
+    // hide all content
+    $('.accordeon_content').hide();
+
+    $('.accordeon_title').click(function(){
+      $(this).parent().toggleClass('active').siblings().removeClass('active');
+      $('.accordeon_content').slideUp();
+
+      if(!$(this).next().is(":visible")) {
+        $(this).next().slideDown();
+      }
+    });
+  });
+</script>
