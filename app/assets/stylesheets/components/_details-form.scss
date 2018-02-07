@@ -25,6 +25,11 @@
   box-shadow: none;
 }
 
+.checkbox label {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
 @media (max-width: 800px) {
   .details-form {
     display: block;
