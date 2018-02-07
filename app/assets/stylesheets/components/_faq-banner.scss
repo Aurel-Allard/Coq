@@ -1,6 +1,6 @@
 #faq-content {
   position: relative;
-  top: 80px;
+  top: 60px;
 }
 
 $radius: 5px;
@@ -40,7 +40,7 @@ ul {
 }
 
 .faq-pattern {
-  background-color: $main;
+  background-color: $admin;
   height: 100px;
   padding: 20px 80px;
   display: flex;
@@ -55,6 +55,7 @@ ul {
 
 .accordeon {
   display: block;
+  height: 820px;
   width: 60%;
   margin: 25px auto;
   padding: 15px;
