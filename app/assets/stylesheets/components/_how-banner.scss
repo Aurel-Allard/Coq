@@ -9,7 +9,7 @@
   }
   p {
     font-size: 14px;
-    color: $medium-gray;
+    color: $gray;
     margin: 35px 80px;
   }
 }
@@ -45,7 +45,7 @@
     align-items: center;
     height: 30px;
     width: 30px;
-    background-color: $medium-gray;
+    background-color: $gray;
     border-radius: 30px;
     margin-left: 40px;
   }
@@ -81,6 +81,7 @@
   width: 320px;
   padding: 20px;
   h3 {
+    color: $main;
     font-weight: 700;
   }
   p {
