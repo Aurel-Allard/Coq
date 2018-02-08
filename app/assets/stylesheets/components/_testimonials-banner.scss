@@ -1,77 +1,55 @@
 #testimonials-banner {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
   height: calc(100vh - 50px);
   background-color: $light-gray;
-  h2 {
-    margin: 0;
-    padding-top: 35px;
-    color: $admin;
-    text-align: center;
-  }
 }
 
-/* Carousel */
+.testimonials-title {
+ height: 100%;
+ width: 35%;
+ background-color: $admin;
+ h2 {
+   margin: 0;
+   padding: 20px;
+   color: white;
+ }
+ h3 {
+   margin: 0;
+   padding: 0 20px;
+   font-size: 16px;
+   font-style: italic;
+   color: white;
+ }
+}
 
-#quote-carousel {
-    padding: 0 10px 30px 10px;
-    margin-top: 30px;
-    /* Control buttons  */
-    /* Previous button  */
-    /* Next button  */
-    /* Changes the position of the indicators */
-    /* Changes the color of the indicators */
+.testimonials-car {
+  width: 65%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
-#quote-carousel .carousel-control {
-    background: none;
-    color: #CACACA;
-    font-size: 2.3em;
-    text-shadow: none;
-    margin-top: 30px;
+
+#testimonial-1-text {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  background-color: blue;
 }
-#quote-carousel .carousel-control.left {
-    left: -60px;
+
+#testimonial-1-pic {
+  grid-row: 1 / 1;
+  grid-column: 2 / 1;
+  background-color: blue;
 }
-#quote-carousel .carousel-control.right {
-    right: -60px;
+
+#testimonial-2-text {
+  grid-row: 2 / 1;
+  grid-column: 2 / 1;
+  background-color: blue;
 }
-#quote-carousel .carousel-indicators {
-    right: 50%;
-    top: auto;
-    bottom: 0px;
-    margin-right: -19px;
-}
-#quote-carousel .carousel-indicators li {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    cursor: pointer;
-    border: 4px solid #CCC;
-    border-radius: 50px;
-    opacity: 0.4;
-    overflow: hidden;
-    transition: all 0.4s;
-}
-#quote-carousel .carousel-indicators .active {
-    background: #333333;
-    width: 128px;
-    height: 128px;
-    border-radius: 100px;
-    border-color: #f33;
-    opacity: 1;
-    overflow: hidden;
-}
-.carousel-inner {
-    min-height: 300px;
-}
-.item blockquote {
-    border-left: none;
-    margin: 0;
-}
-.item blockquote p:before {
-    content: "\f10d";
-    font-family: 'Fontawesome';
-    float: left;
-    margin-right: 10px;
+
+#testimonial-2-pic {
+  grid-row: 2 / 1;
+  grid-column: 1 / 1;
+  background-color: blue;
 }
