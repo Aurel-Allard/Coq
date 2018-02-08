@@ -1,0 +1,7 @@
+#testimonials-banner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  background-color: $light-gray;
+}
