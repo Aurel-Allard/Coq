@@ -4,4 +4,10 @@
   flex-direction: column;
   height: calc(100vh - 50px);
   background-color: $light-gray;
+  h2 {
+    margin: 0;
+    padding-top: 35px;
+    color: $admin;
+    text-align: center;
+  }
 }
