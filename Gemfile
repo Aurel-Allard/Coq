@@ -18,10 +18,11 @@ gem 'webpacker'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'momentjs-rails'
-# gem 'bootstrap-daterangepicker-rails'
+gem 'bootstrap-daterangepicker-rails'
 gem 'faker'
 gem 'jquery_mask_rails', '~> 0.1.0'
 gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
