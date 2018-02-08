@@ -27,29 +27,29 @@
   width: 65%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 50% 50%;
 }
 
-#testimonial-1-text {
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
-  background-color: blue;
+.t-one {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
 }
 
-#testimonial-1-pic {
-  grid-row: 1 / 1;
-  grid-column: 2 / 1;
-  background-color: blue;
+.t-two {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  background-image: url('how-banner.jpg');
+  background-size: cover;
 }
 
-#testimonial-2-text {
-  grid-row: 2 / 1;
-  grid-column: 2 / 1;
-  background-color: blue;
+.t-three {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  background-image: url('how-banner.jpg');
+  background-size: cover;
 }
 
-#testimonial-2-pic {
-  grid-row: 2 / 1;
-  grid-column: 1 / 1;
-  background-color: blue;
+.t-four {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
 }
