@@ -115,4 +115,31 @@
   <button type="button" class="btn btn-primary">JE RÉSERVE !</button>
 </div>
 <div id="testimonials-banner">
+  <div class="testimonials-title">
+    <h2>ILS AIMENT LE COQ TROTTEUR</h2>
+    <h3>(...et on les aime aussi)</h3>
+    <%= link_to 'Découvrir les témoignages', pages_testimonials_path, class: "button-link" %>
+  </div>
+  <div class="testimonials-car">
+    <div class="t-one">
+      <div class="quote-container">
+        <blockquote>
+          <p>Notre séjour avec le Coq Trotteur était formidable. Nous ne pensions pas découvrir autant de chose dans un endroit dont nous n'avions pourtant jamais entendu parlé !</p>
+          <cite>Laura & Stéphanie</cite>
+        </blockquote>
+        <%= link_to 'Plus d\'opinions 💪', pages_testimonials_path, class: "home-link" %>
+      </div>
+    </div>
+    <div class="t-two"></div>
+    <div class="t-three"></div>
+    <div class="t-four">
+      <div class="quote-container">
+        <blockquote>
+          <p>Expérience de qualité, on se sent directement accueilli et l'on enchaine des découvertes dans une France que décisémment on ne connait pas si bien que ça. Une vraie déconnexion et plein de découvertes !</p>
+          <cite>Jérémy</cite>
+        </blockquote>
+        <%= link_to 'Voir d\'autres avis 👌', pages_testimonials_path, class: "home-link" %>
+      </div>
+    </div>
+  </div>
 </div>
