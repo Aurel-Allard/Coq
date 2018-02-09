@@ -1,0 +1,14 @@
+#label-banner {
+  display: flex;
+  height: 250px;
+  justify-content: space-around;
+  align-items: center;
+  h3 {
+    color: $gray;
+    font-size: 20px;
+  }
+}
+
+.label-image {
+  height: 120px;
+}
