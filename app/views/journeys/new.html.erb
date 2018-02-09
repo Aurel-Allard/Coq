@@ -69,7 +69,7 @@
       <p>C’est le week-end, à vous le grand air ! Un horaire, une gare proche de chez-vous…vous voilà partis vers une destination qui ne vous sera révélée que 24h avant de monter dans le train.</p>
     </div>
   </div>
-  <button type="button" class="btn btn-primary">JE PARS !</button>
+  <%= link_to "JE PARS !", root_path(anchor: "home-banner"), class: "btn btn-primary" %>
 </div>
 <div id="gift-banner">
   <div class="gift-content">
@@ -85,7 +85,7 @@
     </div>
     <%= image_tag("gift.png", height: 200, class: "gift-image fade-in") %>
   </div>
-  <button type="button" class="btn btn-primary">OFFRIR UN CADEAU</button>
+  <%= link_to "OFFRIR UN CADEAU", root_path(anchor: "home-banner"), class: "btn btn-primary" %>
 </div>
 <div id="infos-banner" class="text-center">
   <h2>Dates, transport et hébergement</h2>
@@ -112,7 +112,7 @@
       <p>Plus de surprise ! Envie d’un moment sportif un peu spécial, d’un diner aux chandelles ou d’une visite croquignolesque ? Alors faites-nous part de vos préférence ! Avec ou sans option, un petit guide des joyeusetés locales vous sera envoyé par mail. </p>
     </div>
   </div>
-  <button type="button" class="btn btn-primary">JE RÉSERVE !</button>
+  <%= link_to "JE RÉSERVE", root_path(anchor: "home-banner"), class: "btn btn-primary" %>
 </div>
 <div id="testimonials-banner">
   <div class="testimonials-title">
