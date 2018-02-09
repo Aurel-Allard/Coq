@@ -1,13 +1,14 @@
 #testimonials-banner {
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 50px);
+  // height: calc(100vh - 50px);
+  height: 500px;
   background-color: $light-gray;
 }
 
 .testimonials-title {
  height: 100%;
- width: 30%;
+ width: 35%;
  background-color: $admin;
  h2 {
    margin: 0;
@@ -26,7 +27,7 @@
 .testimonials-car {
   width: 65%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
   p {
     margin: 0;
@@ -35,6 +36,9 @@
 }
 
 .t-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
 }
@@ -54,6 +58,8 @@
 }
 
 .t-four {
+  display: flex;
+  justify-content: center;
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
 }
@@ -63,8 +69,9 @@
     font-family: Georgia, serif;
     font-size: 18px;
     font-style: italic;
-    width: 500px;
-    margin: 20px 20px 0 0;
+    width: 90%;
+    margin: 20px 20px 0 20px;
+    border: 0;
     padding: 0.35em 40px;
     line-height: 1.45;
     position: relative;
