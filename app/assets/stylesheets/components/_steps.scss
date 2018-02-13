@@ -13,13 +13,38 @@
   }
 }
 
+.all-steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 700px;
+}
+
 .step {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 180px;
+  opacity: 0.5;
   h3 {
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: 500;
     color: white;
+    text-transform: uppercase;
+  }
+}
 
+.active-step {
+  opacity: 1;
+}
+
+.price {
+  border-left: 1px solid white;
+  width: 180px;
+  h4 {
+    color: white;
+    font-size: 20px;
+    padding: 20px;
   }
 }
