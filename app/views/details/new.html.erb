@@ -1,27 +1,26 @@
 <div id="details-banner">
   <div class="details-form">
     <div class="details-form-content">
-      <%= simple_form_for [@journey, @detail] do |f| %>
         <h2>Mon séjour</h2>
-        <h3>Dates</h3>
-
-        <%= f.input :date, label: false %>
-        <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
-        <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme'] %>
-        <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture'] %>
-        <h3>Points d'attention</h3>
-        <%= f.input :points_of_attention, label: false %>
-        <%= f.submit "SUIVANT", class: "btn btn-primary" %>
+        <%= simple_form_for [@journey, @detail] do |f| %>
+          <h3>Dates</h3>
+            <%= f.input :date, label: false %>
+            <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
+            <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme'] %>
+            <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture'] %>
+          <h3>Points d'attention</h3>
+              <%= f.input :points_of_attention, label: false %>
+              <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
 
 <script>
-  $("#details-banner").steps({
-      headerTag: "h3",
-      // bodyTag: "section",
-      transitionEffect: "slideLeft",
-      autoFocus: true
-  });
+  // $(".details-form-content").steps({
+  //     headerTag: "h3",
+  //     bodyTag: "section",
+  //     transitionEffect: "slideLeft",
+  //     autoFocus: true
+  // });
 </script>
