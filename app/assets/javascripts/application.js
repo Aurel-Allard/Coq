@@ -6,3 +6,4 @@
 //= require daterangepicker
 //= require_tree .
 //= require jquery.mask
+//= require jquery.steps
