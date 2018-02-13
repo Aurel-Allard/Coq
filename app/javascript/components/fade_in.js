@@ -8,7 +8,7 @@ function fadeIn() {
 
               if( bottom_of_window > bottom_of_object ){
 
-                  $(this).animate({'opacity':'1'},1500);
+                  $(this).animate({'opacity':'1'}, 1000);
               }
           });
       });
