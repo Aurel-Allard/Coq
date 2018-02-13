@@ -1,10 +1,11 @@
 #details-banner {
   position: relative;
-  top: 120px;
+  margin-top: 50px;
   display : flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), image-url('banner.jpg');
+  // background: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), image-url('banner.jpg');
+  background-color: white;
   background-attachment: fixed;
   color: white;
   height: 750px;
