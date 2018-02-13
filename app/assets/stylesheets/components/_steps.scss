@@ -40,8 +40,11 @@
 }
 
 .price {
-  border-left: 1px solid white;
+  position: absolute;
+  right: 0%;
+  border-left: 1px solid $medium-gray;
   width: 180px;
+  text-align: center;
   h4 {
     color: white;
     font-size: 20px;
