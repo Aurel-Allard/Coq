@@ -46,3 +46,16 @@
 .summary-content {
   padding: 20px;
 }
+
+.summary-price {
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid $gray;
+  border-bottom: 2px solid $gray;
+  margin-top: 25px;
+  h4 {
+    margin-top: 5px;
+    margin-bottom:5px;
+  }
+}
