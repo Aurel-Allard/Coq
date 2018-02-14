@@ -1,0 +1,67 @@
+#summary-banner {
+  position: relative;
+  margin-top: 50px;
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  // background: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), image-url('banner.jpg');
+  background-color: white;
+  background-attachment: fixed;
+  color: white;
+  height: 750px;
+  background-size: cover !important;
+  h3 {
+    color: $gray;
+  }
+}
+
+.summary-block {
+  position: absolute;
+  top: 120px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border: 1px solid $main;
+  width: 500px;
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding: 0 !important;
+  }
+  h3 {
+    margin: 25px;
+    font-size: 14px;
+    font-style: italic;
+    text-align: right;
+  }
+  h4 {
+    margin: 25px 40px 10px 25px;
+    font-weight: bold;
+  }
+  p {
+    margin: 5px 40px;
+  }
+  color: $gray;
+}
+
+.summary-content {
+  padding: 20px;
+}
+
+.summary-price {
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid $gray;
+  border-bottom: 2px solid $gray;
+  margin-top: 25px;
+  h4 {
+    margin-top: 5px;
+    margin-bottom:5px;
+  }
+}
+
+.btn-pay {
+  display: block;
+  margin: 20px auto;
+  width: 500px;
+}

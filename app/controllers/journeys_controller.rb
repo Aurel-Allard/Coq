@@ -14,7 +14,7 @@ class JourneysController < ApplicationController
   end
 
   def show
-    # @journey = Journey.find(params[:id])
+    @journey = Journey.find(params[:id])
   end
 
   private

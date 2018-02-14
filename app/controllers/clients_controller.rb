@@ -5,10 +5,11 @@ class ClientsController < ApplicationController
     end
 
     def create
+      @journey = Journey.find(params[:journey_id])
       @client = Client.new(client_params)
-      @client.journey = Journey.find(params[:journey_id])
+      @client.journey = @journey
       @client.save!
-      redirect_to journeys_path
+      redirect_to journey_path(@journey)
     end
 
     private

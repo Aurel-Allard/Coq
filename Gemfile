@@ -23,6 +23,7 @@ gem 'faker'
 gem 'jquery_mask_rails', '~> 0.1.0'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'rails-jquery-steps'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -13,7 +13,7 @@ puts 'Creating false journeys'
   all_details = Detail.new(
     is_a_surprise: ['true', 'false'].sample,
     date: Date.new(2018,2,3),
-    housing_type: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme' ].sample,
+    housing_type: ['Nid douillet', 'Chic' ].sample,
     activity_type: ['Aucune', 'Sport', 'Gastronomie', 'Culture' ].sample,
     points_of_attention: 'n.a.'
     )
@@ -21,7 +21,7 @@ puts 'Creating false journeys'
   all_clients = Client.new(
     name: Faker::Name.first_name,
     surname: Faker::Name.last_name,
-    gender: ['Homme', 'Femme'].sample,
+    gender: ['M.', 'Mme.'].sample,
     address: Faker::Address.street_address,
     birth_date: Faker::Date.forward(25),
     phone: Faker::PhoneNumber.cell_phone,

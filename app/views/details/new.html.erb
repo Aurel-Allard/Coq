@@ -1,17 +1,31 @@
+<div id="step-bar">
+  <div class="all-steps">
+    <div class="step active-step">
+      <p>☝</p>
+      <h3>1 - Séjour</h3>
+    </div>
+    <div class="step">
+      <p>✌</p>
+      <h3>2 - Voyageurs</h3>
+    </div>
+    <div class="step">
+      <p>👏</p>
+      <h3>3 - Validation</h3>
+    </div>
+  </div>
+  <div class="price">
+    <h4>90€</h4>
+  </div>
+</div>
 <div id="details-banner">
   <div class="details-form">
     <div class="details-form-content">
+      <h2>Mon séjour</h2>
       <%= simple_form_for [@journey, @detail] do |f| %>
-        <h2>Mon séjour</h2>
         <h3>Dates</h3>
-        <!-- <p><input type="text" id="daterange"></p>
-        <p id="detail_date"></p> -->
-
         <%= f.input :date, label: false %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
-        <h3>Options de logement</h3>
         <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Chambre d\'hôte ou hôtel', 'Hôtel de charme'] %>
-        <h3>Activité optionnelle</h3>
         <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture'] %>
         <h3>Points d'attention</h3>
         <%= f.input :points_of_attention, label: false %>
@@ -21,65 +35,5 @@
   </div>
 </div>
 
-<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-
-<script type="text/javascript"></script>
 <script>
-  $('#btn-date').click(function(){
-
-  });
-  $(function() {
-    $('input[id="daterange"]').daterangepicker({
-        "autoApply": true,
-        "dateLimit": {
-            "days": 3
-        },
-        "locale": {
-          "format": "DD/MM/YYYY",
-          "separator": " - ",
-          "applyLabel": "Valider",
-          "cancelLabel": "Annuler",
-          "fromLabel": "Du",
-          "toLabel": "Au",
-          "customRangeLabel": "Custom",
-          "weekLabel": "W",
-          "daysOfWeek": [
-              "Di",
-              "Lu",
-              "Ma",
-              "Me",
-              "Je",
-              "Ve",
-              "Sa"
-          ],
-          "monthNames": [
-              "Janvier",
-              "Février",
-              "Mars",
-              "Avril",
-              "May",
-              "Juin",
-              "Juillet",
-              "Août",
-              "Septembre",
-              "Octobre",
-              "Novembre",
-              "Décembre"
-          ],
-          "firstDay": 1
-        },
-        "startDate": moment().format('DD/MM/YYYY'),
-        "endDate": moment().format('DD/MM/YYYY'),
-        "isInvalidDate": function(date) {
-          return (date.day() == 1 || date.day() == 2 || date.day() == 3);
-        }
-    });
-  });
-
-  $(document).ready(function(){
-    $("#daterange").change(function(){
-       $("#detail_date").html("Du " + $('#daterange').val());
-    });
-   });
-</script> -->
+</script>

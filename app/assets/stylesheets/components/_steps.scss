@@ -1,0 +1,53 @@
+#step-bar {
+  position: fixed;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  height: 90px;
+  width: 100%;
+  background-color: $admin;
+  p {
+    font-size: 32px;
+  }
+}
+
+.all-steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 700px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  opacity: 0.5;
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+.active-step {
+  opacity: 1;
+}
+
+.price {
+  position: absolute;
+  right: 0%;
+  border-left: 1px solid $medium-gray;
+  width: 180px;
+  text-align: center;
+  h4 {
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+  }
+}
