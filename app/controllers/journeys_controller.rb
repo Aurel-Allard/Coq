@@ -13,8 +13,8 @@ class JourneysController < ApplicationController
     redirect_to new_journey_detail_path(@journey)
   end
 
-  def show
-    # @journey = Journey.find(params[:id])
+  def summary
+    @journey = Journey.find(params[:id])
   end
 
   private

@@ -1,22 +1,43 @@
+<div id="step-bar">
+  <div class="all-steps">
+    <div class="step">
+      <p>☝</p>
+      <h3>1 - Séjour</h3>
+    </div>
+    <div class="step active-step">
+      <p>✌</p>
+      <h3>2 - Voyageurs</h3>
+    </div>
+    <div class="step">
+      <p>👏</p>
+      <h3>3 - Validation</h3>
+    </div>
+  </div>
+  <div class="price">
+    <h4>90€</h4>
+  </div>
+</div>
 <div id="details-banner">
   <div class="details-form">
     <div class="details-form-content">
       <%= simple_form_for [@journey, @client] do |f| %>
       <h2>Mes informations</h2>
-        <%= f.input :name, label: false, placeholder: "Prénom*", input_html: { class: 'client-form' }%>
-        <%= f.input :surname, label: false, placeholder: "Nom de famille*", input_html: { class: 'client-form' }%>
-        <%= f.input :gender, prompt: "Vous êtes*", label: false, collection: ['Une Femme', 'Un Homme'], input_html: { class: 'client-form' } %>
-        <%= f.input :address, label: false, placeholder: "Adresse*", input_html: { class: 'client-form', id: 'flat_address' }%>
-        <%= f.input :birth_date, label: "Date de naissance*", input_html: { class: 'client-form' }%>
-        <%= f.input :mail, label: false, placeholder: "email*", input_html: { class: 'client-form' }%>
-        <%= f.input :phone, label: false, placeholder: "Téléphone portable*", input_html: { class: 'client-form', id: 'client-phone' }%>
-        <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
-        <%= f.submit "SUIVANT", class: "btn btn-primary" %>
+      <%= f.input :name, label: false, placeholder: "Prénom*", input_html: { class: 'client-form' }%>
+      <%= f.input :surname, label: false, placeholder: "Nom de famille*", input_html: { class: 'client-form' }%>
+      <%= f.input :gender, prompt: "Vous êtes*", label: false, collection: ['Une Femme', 'Un Homme'], input_html: { class: 'client-form' } %>
+      <%= f.input :address, label: false, placeholder: "Adresse*", input_html: { class: 'client-form', id: 'flat_address' }%>
+      <%= f.input :birth_date, label: "Date de naissance*", input_html: { class: 'client-form' }%>
+      <%= f.input :mail, label: false, placeholder: "email*", input_html: { class: 'client-form' }%>
+      <%= f.input :phone, label: false, placeholder: "Téléphone portable*", input_html: { class: 'client-form', id: 'client-phone' }%>
+      <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
+      <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
 
 <script>
-  $("#client-phone").mask("99 99 99 99 99");
+  $(document).ready(function() {
+    $("#client-phone").mask("99 99 99 99 99");
+  });
 </script>
