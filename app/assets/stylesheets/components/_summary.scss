@@ -1,4 +1,4 @@
-#details-banner {
+#summary-banner {
   position: relative;
   margin-top: 50px;
   display : flex;
@@ -15,42 +15,31 @@
   }
 }
 
-.details-form {
+.summary-block {
   position: absolute;
-  top: 80px;
+  top: 120px;
   background-color: rgba(255, 255, 255, 0.97);
-  width: 600px;
+  border: 1px solid $main;
+  width: 500px;
   h2 {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
     padding: 0 !important;
   }
   h3 {
-    text-align: left;
-    font-weight: 600;
+    margin: 25px;
+  }
+  h4 {
+    margin: 25px 40px 10px 25px;
+    font-weight: bold;
+  }
+  p {
+    margin: 5px 40px;
   }
   color: $gray;
 }
 
-.details-form-content {
+.summary-content {
   padding: 20px;
-}
-
-.client-form {
-  color: #989898;
-  border: none;
-  border-bottom: 1px solid #CCC;
-  box-shadow: none;
-}
-
-.checkbox label {
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-@media (max-width: 800px) {
-  .details-form {
-    display: block;
-    width : 80%;
-    margin: 35px auto;
-  }
 }

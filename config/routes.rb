@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'client/new'
 
-  resources :journeys, only: [:new, :create, :summary, :index] do
+  resources :journeys, only: [:new, :create, :show, :index] do
     resources :details, only: [ :new, :create ]
     resources :clients, only: [ :new, :create ]
   end

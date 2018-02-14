@@ -17,12 +17,12 @@
     <h4>90€</h4>
   </div>
 </div>
-<div id="details-banner">
-  <div class="details-form">
-    <div class="details-form-content">
+<div id="summary-banner">
+  <div class="summary-block">
+    <div class="summary-content">
       <h2>Vous partez en week-end !</h2>
       <h3><%= @journey.people_count[/[123456789]/] %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
-      <p><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></p>
+      <h3 style="margin-top: 0"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
       <p>N<%= @journey.id %>LCT</p>
       <h4>Nom de réservation</h4>
@@ -32,9 +32,9 @@
       <p><%= @journey.client.phone %></p>
       <h4>Détails</h4>
       <p><%= @journey.detail.housing_type %></p>
-      <p><%= @journey.detail.activity_type ? "Vous avez sélectionné un chouette moment de " + @journey.detail.activity_type : "Pas d'activité sélectionnée" %></p>
+      <p><%= @journey.detail.activity_type ? "Activité : " + @journey.detail.activity_type : "Pas d'activité sélectionnée" %></p>
       <% if @journey.detail.points_of_attention %>
-        <p>Points d'attentions (promis, on fera attention !) :</p>
+        <p>Points d'attentions (promis, on sera vigilants !) :</p>
         <p><%= @journey.detail.points_of_attention %></p>
       <% end %>
     </div>
