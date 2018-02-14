@@ -21,8 +21,8 @@
   <div class="summary-block">
     <div class="summary-content">
       <h2>Vous partez en week-end !</h2>
-      <h3><%= @journey.people_count[/[123456789]/] %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
-      <h3 style="margin-top: 0"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
+      <h3 style="margin-bottom: 10px;"><%= @journey.people_count[/[123456789]/] %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
+      <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
       <p>N<%= @journey.id %>LCT</p>
       <h4>Nom de réservation</h4>
@@ -37,6 +37,10 @@
         <p>Points d'attentions (promis, on sera vigilants !) :</p>
         <p><%= @journey.detail.points_of_attention %></p>
       <% end %>
+      <div class="summary-price">
+        <h4>Total</h4>
+        <h4>90€</h4>
+      </div>
     </div>
   </div>
 </div>
