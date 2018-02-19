@@ -15,6 +15,7 @@ class JourneysController < ApplicationController
 
   def show
     @journey = Journey.find(params[:id])
+    UserMailer.confirmation(@journey).deliver_now
   end
 
   private
