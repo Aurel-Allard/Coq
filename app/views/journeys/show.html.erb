@@ -18,7 +18,7 @@
   </div>
 </div>
 <div id="summary-banner">
-  <div class="summary-block">
+  <div class="summary-block text-center">
     <div class="summary-content">
       <h2>Vous partez en week-end !</h2>
       <h3 style="margin-bottom: 10px;"><%= @journey.people_count[/[123456789]/] %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
@@ -43,5 +43,5 @@
       </div>
     </div>
   </div>
+  <%= link_to "Procéder au paiement", root_path(anchor: "home-banner"), class: "btn btn-primary btn-pay" %>
 </div>
-<%= link_to "Procéder au paiement", root_path(anchor: "home-banner"), class: "btn btn-primary btn-pay" %>
