@@ -9,7 +9,7 @@ class ClientsController < ApplicationController
       @client = Client.new(client_params)
       @client.journey = @journey
       @client.save!
-      redirect_to journey_path(@journey)
+      redirect_to new_journey_payment_path(@journey)
     end
 
     private
