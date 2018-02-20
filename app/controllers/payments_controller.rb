@@ -3,27 +3,31 @@ class PaymentsController < ApplicationController
 
   def new
     @journey = Journey.find(params[:journey_id])
+    @amount = 500
   end
 
   def create
-  customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email:  params[:stripeEmail]
-  )
+    @journey = Journey.find(params[:journey_id])
+    @amount = 500
 
-  charge = Stripe::Charge.create(
-    customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @order.amount_cents,
-    description:  "Payment for teddy #{@order.teddy_sku} for order #{@order.id}",
-    currency:     @order.amount.currency
-  )
+    customer = Stripe::Customer.create(
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
 
-  @order.update(payment: charge.to_json, state: 'paid')
-  redirect_to order_path(@order)
+    charge = Stripe::Charge.create(
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @amount,
+      description:  "Payment for teddy #{@order.teddy_sku} for order #{@order.id}",
+      currency:     'eur'
+    )
 
-rescue Stripe::CardError => e
-  flash[:alert] = e.message
-  redirect_to new_order_payment_path(@order)
+    @journey.detail.update(payment: charge.to_json, state: 'paid')
+    redirect_to order_path(@order)
+
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    # redirect_to new_order_payment_path(@order)
 end
 
 private
