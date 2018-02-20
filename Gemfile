@@ -24,7 +24,7 @@ gem 'jquery_mask_rails', '~> 0.1.0'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'rails-jquery-steps'
-gem "letter_opener", group: :development
+# gem "letter_opener", group: :development
 
 group :development do
   gem 'web-console', '>= 3.3.0'
