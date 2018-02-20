@@ -14,6 +14,6 @@ class DetailsController < ApplicationController
     private
 
     def details_params
-      params.require(:detail).permit(:is_a_surprise, :date, :housing_type, :points_of_attention)
+      params.require(:detail).permit(:is_a_surprise, :date, :housing_type, :points_of_attention, :price)
     end
 end
