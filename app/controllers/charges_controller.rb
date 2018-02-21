@@ -1,14 +1,12 @@
 class ChargesController < ApplicationController
-  # before_action :set_order
+  before_action :set_amount
 
   def new
     @journey = Journey.find(params[:journey_id])
-    @amount = 500
   end
 
   def create
     @journey = Journey.find(params[:journey_id])
-    @amount = 500
 
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
@@ -23,7 +21,7 @@ class ChargesController < ApplicationController
     )
 
     @journey.detail.update(payment: charge.to_json, state: 'paid')
-    redirect_to order_path(@order)
+    redirect_to journey_charges_path(@journey)
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
@@ -31,6 +29,11 @@ class ChargesController < ApplicationController
 end
 
 private
+
+  def set_amount
+    @journey = Journey.find(params[:journey_id])
+    @amount = @journey.detail.price.cents;
+  end
 
   def set_journey
     params.require(:journey).permit(:origin, :people_count, :destination_type)

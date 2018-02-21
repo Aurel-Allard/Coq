@@ -36,11 +36,13 @@ ActiveRecord::Schema.define(version: 20180220092253) do
     t.string "housing_type"
     t.string "activity_type"
     t.text "points_of_attention"
-    t.integer "price"
+    t.jsonb "payment"
+    t.string "state"
     t.bigint "journey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "EUR", null: false
     t.index ["journey_id"], name: "index_details_on_journey_id"
   end
 

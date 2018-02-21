@@ -1,7 +1,7 @@
 #summary-banner {
   background-color: white;
   color: white;
-  height: 900px;
+  height: 800px;
   background-size: cover !important;
   h3 {
     color: $gray;
@@ -54,9 +54,11 @@
   }
 }
 
-.btn-pay {
-  position: relative;
-  top: 240px;
-  margin: 20px auto 40px auto;
-  width: 500px;
+.stripe-button-el {
+  display: block !important;
+  width: auto !important;
+  color: white !important;
+  background-color: $main !important;
+  border-color: $main !important;
+  margin: 20px auto 0 auto !important;
 }
