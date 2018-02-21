@@ -15,7 +15,8 @@ puts 'Creating false journeys'
     date: Date.new(2018,2,3),
     housing_type: ['Nid douillet', 'Chic' ].sample,
     activity_type: ['Aucune', 'Sport', 'Gastronomie', 'Culture' ].sample,
-    points_of_attention: 'n.a.'
+    points_of_attention: 'n.a.',
+    price_cents: 500
     )
 
   all_clients = Client.new(
