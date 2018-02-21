@@ -70,7 +70,7 @@
   background-position: center;
 }
 
-.steps {
+.how-steps {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -78,7 +78,7 @@
   opacity: 0;
 }
 
-.step {
+.how-step {
   width: 320px;
   padding: 20px;
   h3 {
@@ -98,11 +98,11 @@
   .pst-image {
     display: none;
   }
-  .steps {
+  .how-steps {
     display: block;
     margin: 35px auto;
   }
-  .step {
+  .how-step {
     width: 100%;
     padding: 5px 40px;
   }
