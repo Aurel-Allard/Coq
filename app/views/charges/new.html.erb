@@ -59,7 +59,7 @@
 
         <script>
           // Create a Stripe client
-          var stripe = Stripe('pk_test_FIcncftTUIekAyAhLnpGL8jR');
+          var stripe = Stripe('<%= :publishable_key %>');
 
           // Create an instance of Elements
           var elements = stripe.elements();
