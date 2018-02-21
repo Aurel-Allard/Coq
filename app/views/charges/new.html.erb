@@ -41,14 +41,11 @@
         <h4>TOTAL</h4>
         <h4>90€</h4>
       </div>
-    </div>
 
+    <h4 style="color: #E30054;">Vos informations bancaires</h4>
       <%= form_tag journey_charges_path(@journey) do %>
         <div class="stripe-form">
           <div class="form-row">
-            <label for="card-element">
-              Credit or debit card
-            </label>
             <div id="card-element">
               <!-- a Stripe Element will be inserted here. -->
             </div>
@@ -57,7 +54,7 @@
             <div id="card-errors" role="alert"></div>
           </div>
 
-          <!-- <button>Submit Payment</button> -->
+          <button>Payer</button>
         </div>
 
         <script>
@@ -120,8 +117,9 @@
           });
         </script>
       <% end %>
+    </div>
   </div>
 
-  <%= link_to "Procéder au paiement", root_path(anchor: "home-banner"), class: "btn btn-primary btn-pay" %>
+  <% # link_to "Procéder au paiement", root_path(anchor: "home-banner"), class: "btn btn-primary btn-pay" %>
 </div>
 
