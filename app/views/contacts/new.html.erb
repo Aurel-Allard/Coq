@@ -1,0 +1,21 @@
+<div id="contact-banner">
+  <h2>Contactez-nous</h2>
+  <div class="contact-form">
+    <div class="contact-intro">
+      <h3>Vous pouvez nous contacter via le formulaire ci-dessous ou via la messagerie de notre compte Facebook.</h3>
+      <h3>Dans un cas comme dans l'autre nous ferons en sorte de vous répondre dès que possible 😉</h3>
+    </div>
+    <%= simple_form_for @contact, html: {class: 'form-horizontal' } do |f| %>
+      <%= f.input :name, label: false, placeholder: 'Nom et prénom*' %>
+      <%= f.input :email, label: false, placeholder: 'email*' %>
+      <%= f.input :message, as: :text, label: false, placeholder: 'Votre message*', input_html: {:rows => 10} %>
+      <div class= "hidden">
+        <%= f.input :nickname, hint: 'Leave this field blank!' %>
+      </div>
+      <div>
+        </br>
+        <%= f.button :submit, 'Nous contacter', class: "btn btn-primary btn-contact" %>
+      </div>
+    <% end %>
+  </div>
+</div>

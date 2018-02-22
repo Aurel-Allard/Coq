@@ -26,6 +26,7 @@ gem 'rails-jquery-steps'
 # gem "letter_opener", group: :development
 gem 'money-rails'
 gem 'stripe'
+gem 'mail_form'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
