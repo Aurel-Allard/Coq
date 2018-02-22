@@ -7,9 +7,9 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-      flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
+      flash.now[:notice] = "Merci pour votre message, nous vous répondrons très rapidement !"
     else
-      flash.now[:error] = 'Cannot send message.'
+      flash.now[:error] = "Désolé. Le message n\'a pas pu être convenablement envoyé. Vous pouvez nous contacter directement sur XXX."
       render :new
     end
   end
