@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   root to: 'journeys#new'
 
-  get 'pages/contact'
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   get 'pages/about'
   get 'pages/faq'
   get 'pages/testimonials'
