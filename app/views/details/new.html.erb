@@ -28,7 +28,7 @@
         <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Nid douillet', 'Hébergement de charme'] %>
         <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture'] %>
         <h3>Points d'attention</h3>
-        <%= f.input :points_of_attention, label: false %>
+        <%= f.input :points_of_attention, label: false, input_html: {:rows => 6} %>
         <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
