@@ -47,7 +47,7 @@
         <p class="text">Vous pouvez partir sur une à trois nuits, du jeudi au lundi à convenance.</p>
       </div>
     </li>
-    <li class="accordeon_item">
+    <li class="accordeon_item" id="make-a-gift">
       <h4 class="accordeon_title">Comment organiser un séjour surprise ?</h4>
       <div class="accordeon_content">
         <p class="text">Rien de plus simple : cochez la case "Ce séjour est une surprise". Ainsi, seule la personne ayant réalisé l'achat du séjour en sera informée. Nous vous demanderont aussi les mails du ou de vos invité(s) qui recevront leurs instructions 24h à l'avance.</p>
@@ -102,6 +102,7 @@
       </div>
     </li>
   </ul>
+  <%= link_to "C'EST PARTI !", root_path(anchor: "home-banner"), class: "btn btn-primary btn-banner" %>
 </div>
 
 <script>

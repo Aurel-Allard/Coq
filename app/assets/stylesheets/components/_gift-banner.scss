@@ -1,8 +1,11 @@
 #gift-banner {
+  position: relative;
+  top: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 600px;
+  padding: 60px 0;
   // height: calc(100vh - 50px);
   background-color: $light-gray;
   p {
@@ -19,7 +22,6 @@
 
 .gift-pst {
   position: absolute;
-  top: 40px;
   left: 35px;
 }
 

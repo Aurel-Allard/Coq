@@ -70,6 +70,7 @@
     </div>
   </div>
   <%= link_to "JE PARS !", root_path(anchor: "home-banner"), class: "btn btn-primary btn-banner" %>
+  <%= link_to "Dites m'en plus", root_path(anchor: "info-banner"), class: "more-link" %>
 </div>
 <div id="gift-banner">
   <div class="gift-content">
@@ -86,6 +87,7 @@
     <%= image_tag("gift.png", height: 200, class: "gift-image fade-in") %>
   </div>
   <%= link_to "OFFRIR UN CADEAU", root_path(anchor: "home-banner"), class: "btn btn-primary btn-banner" %>
+  <%= link_to "Comment faire un cadeau ?", pages_faq_path(anchor: "make-a-gift"), class: "more-link" %>
 </div>
 <div id="info-banner" class="text-center">
   <h2>Dates, transport et hébergement</h2>
@@ -113,6 +115,7 @@
     </div>
   </div>
   <%= link_to "JE RÉSERVE", root_path(anchor: "home-banner"), class: "btn btn-primary btn-banner" %>
+  <%= link_to "Besoin de plus d'informations ?", pages_faq_path, class: "more-link" %>
 </div>
 <div id="testimonials-banner">
   <div class="testimonials-title">
