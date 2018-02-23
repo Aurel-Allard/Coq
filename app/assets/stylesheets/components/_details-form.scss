@@ -45,6 +45,20 @@
   margin-top: 10px;
 }
 
+.help-block {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.form-control{
+  &:focus {
+    color: $main;
+    font-weight: 700;
+    border-bottom: 1px solid $main;
+    box-shadow: none;
+  }
+}
+
 @media (max-width: 800px) {
   .details-form {
     display: block;
