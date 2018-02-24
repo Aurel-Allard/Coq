@@ -5,15 +5,19 @@ class DetailsController < ApplicationController
     end
 
     def create
+      @journey = Journey.find(params[:journey_id])
       @detail = Detail.new(details_params)
-      @detail.journey = Journey.find(params[:journey_id])
-      @detail.save!
-      redirect_to new_journey_client_path
+      @detail.journey = @journey
+      if @detail.save
+        redirect_to new_journey_client_path(@journey)
+      else
+        render :new
+      end
     end
 
     private
 
     def details_params
-      params.require(:detail).permit(:is_a_surprise, :date, :housing_type, :points_of_attention, :price)
+      params.require(:detail).permit(:date, :is_a_surprise, :housing_type, :activity_type, :points_of_attention)
     end
 end

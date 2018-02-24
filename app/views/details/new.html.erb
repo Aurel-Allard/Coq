@@ -23,12 +23,12 @@
       <h2>Mon séjour</h2>
       <%= simple_form_for [@journey, @detail] do |f| %>
         <h3>Dates</h3>
-        <%= f.input :date, label: false %>
+        <%= f.input :date %>
         <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise' %>
-        <%= f.input :housing_type, prompt: "Type de logement", label: false, collection: ['Nid douillet', 'Hébergement de charme'] %>
-        <%= f.input :activity_type, prompt: "Activité optionnelle", label: false, collection: ['Sport', 'Gastronomie', 'Culture'] %>
-        <h3>Points d'attention</h3>
-        <%= f.input :points_of_attention, label: false, input_html: {:rows => 6} %>
+        <%= f.input :housing_type, prompt: "Type de logement*", collection: ['Nid douillet', 'Hébergement de charme'] %>
+        <%= f.input :activity_type, prompt: "Activité optionnelle*", collection: ['Aucune', 'Sport', 'Gastronomie', 'Culture'] %>
+        <h3>Points d'attention*</h3>
+        <%= f.input :points_of_attention, input_html: {:rows => 6} %>
         <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
