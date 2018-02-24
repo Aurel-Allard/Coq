@@ -1,4 +1,4 @@
-#details-banner {
+#client-banner {
   display : flex;
   justify-content: center;
   align-items: center;
@@ -14,11 +14,10 @@
 }
 
 .client-form {
-  position: absolute;
-  top: 80px;
   background-color: rgba(255, 255, 255, 0.97);
   width: 600px;
   color: $gray;
+  margin: 40px auto;
   h2 {
     text-align: center;
     // padding: 20px 0;
