@@ -1,26 +1,26 @@
-#details-banner {
+#client-banner {
   display : flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), image-url('banner.jpg');
+  // background: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), image-url('banner.jpg');
+  background-color: white;
   background-attachment: fixed;
   color: white;
-  // height: 950px;
-  overflow: hidden;
+  height: 800px;
   background-size: cover !important;
   h3 {
     color: $gray;
   }
 }
 
-.details-form {
+.client-form {
   background-color: rgba(255, 255, 255, 0.97);
   width: 600px;
   color: $gray;
   margin: 40px auto;
   h2 {
     text-align: center;
-    margin: 0;
+    // padding: 20px 0;
   }
   h3 {
     text-align: left;
@@ -31,10 +31,10 @@
     font-weight: bold;
     margin: 0;
   }
-  .details-form-content {
+  .client-form-content {
     padding: 20px;
   }
-  .client-form {
+  .client-input {
     border: none;
     border-bottom: 1px solid #CCC;
     box-shadow: none;

@@ -17,20 +17,21 @@
     <h4>90€</h4>
   </div>
 </div>
-<div id="details-banner">
-  <div class="details-form">
-    <div class="details-form-content">
-      <%= simple_form_for [@journey, @client] do |f| %>
-      <h2>Mes informations</h2>
-      <%= f.input :name, label: false, placeholder: "Prénom*", input_html: { class: 'client-form' }%>
-      <%= f.input :surname, label: false, placeholder: "Nom de famille*", input_html: { class: 'client-form' }%>
-      <%= f.input :gender, prompt: "Vous êtes*", label: false, collection: ['Une Femme', 'Un Homme'], input_html: { class: 'client-form' } %>
-      <%= f.input :address, label: false, placeholder: "Adresse*", input_html: { class: 'client-form', id: 'flat_address' }%>
-      <%= f.input :birth_date, label: "Date de naissance*", input_html: { class: 'client-form' }%>
-      <%= f.input :mail, label: false, placeholder: "email*", input_html: { class: 'client-form' }%>
-      <%= f.input :phone, label: false, placeholder: "Téléphone portable*", input_html: { class: 'client-form', id: 'client-phone' }%>
-      <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
-      <%= f.submit "SUIVANT", class: "btn btn-primary" %>
+<div class="empty-form-div"></div>
+<div id="client-banner">
+  <div class="client-form">
+    <div class="client-form-content">
+      <%= simple_form_for [@journey, @client], defaults: { label: false, input_html: { class: 'client-input' } } do |f| %>
+        <h2>Mes informations</h2>
+        <%= f.input :name, placeholder: "Prénom*", error: 'Nous avons besoin de votre nom :)' %>
+        <%= f.input :surname, placeholder: "Nom de famille*", error: 'Votre prénom est nécessaire à la réservation !' %>
+        <%= f.input :gender, prompt: "Vous êtes*", collection: ['Une Femme', 'Un Homme'], error: 'Merci de renseigner ce champs' %>
+        <%= f.input :address, placeholder: "Adresse*", error: 'Merci de renseigner ce champs', input_html: { id: 'flat_address' }%>
+        <%= f.input :birth_date, label: "Date de naissance*" %>
+        <%= f.input :mail, placeholder: "email*", error: 'Votre mail est invalide, veuillez réessayer.' %>
+        <%= f.input :phone, placeholder: "Téléphone portable*", input_html: { id: 'client-phone' }, error: 'Le format est invalide.' %>
+        <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
+        <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
@@ -41,3 +42,4 @@
     $("#client-phone").mask("99 99 99 99 99");
   });
 </script>
+
