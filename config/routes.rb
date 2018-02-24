@@ -7,10 +7,12 @@ Rails.application.routes.draw do
     resources :clients, only: [ :new, :create ]
     resources :charges, only: [:new, :create]
   end
+  resources "contacts", only: [:new, :create]
+
   root to: 'journeys#new'
 
+  # match '/sejour', to: 'details#new', via: 'get'
   match '/contacts', to: 'contacts#new', via: 'get'
-  resources "contacts", only: [:new, :create]
 
   get 'pages/about'
   get 'pages/faq'
