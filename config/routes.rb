@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'client/new'
+  devise_for :admins
 
-  resources :journeys, only: [:new, :create, :show, :index] do
+  resources :journeys, only: [:new, :create, :show] do
     resources :details, only: [ :new, :create ]
     resources :clients, only: [ :new, :create ]
     resources :charges, only: [:new, :create]
   end
+
+  # Admin
+  authenticate :admin do
+    resources :journeys, only: [:index], path: '/admin'
+  end
+
   resources "contacts", only: [:new, :create]
 
   root to: 'journeys#new'
