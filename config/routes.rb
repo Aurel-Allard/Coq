@@ -8,10 +8,6 @@ Rails.application.routes.draw do
     resources :charges, only: [ :new, :create ]
   end
 
-  # authenticated :user do
-  #   resources :journeys, only: [ :index ]
-  # end
-
   devise_scope :user do
     get "/login" => "devise/sessions#new"
     delete '/logout', to: 'devise/sessions#destroy'
