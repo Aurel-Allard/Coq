@@ -30,16 +30,17 @@ puts 'Creating false journeys'
     contact: ['true', 'false'].sample
     )
 
-  admin = Admin.new(
-    email: 'admin@admin.fr',
-    password: '123456',
-    )
-
   journey.detail = all_details
   journey.client = all_clients
   all_details.save!
   all_clients.save!
   journey.save!
-  admin.save!
 end
+
+admin = Admin.new(
+  email: 'admin@admin.fr',
+  password: '123456',
+  )
+admin.save!
+
 puts 'Finished!'
