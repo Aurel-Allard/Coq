@@ -28,7 +28,7 @@
         <%= f.input :gender, prompt: "Vous êtes*", collection: ['Une Femme', 'Un Homme'], error: 'Merci de renseigner ce champs' %>
         <%= f.input :address, placeholder: "Adresse*", error: 'Merci de renseigner ce champs', input_html: { id: 'flat_address' }%>
         <%= f.input :birth_date, label: "Date de naissance*" %>
-        <%= f.input :mail, placeholder: "email*", error: 'Votre mail est invalide, veuillez réessayer.' %>
+        <%= f.input :email, placeholder: "email*", error: 'Votre mail est invalide, veuillez réessayer.' %>
         <%= f.input :phone, placeholder: "Téléphone portable*", input_html: { id: 'user-phone' }, error: 'Le format est invalide.' %>
         <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
         <%= f.submit "SUIVANT", class: "btn btn-primary" %>

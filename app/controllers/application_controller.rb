@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    current_user.admin ? journeys_path : root_path
+    @journey = current_user.journey
+    current_user.admin ? journeys_path : journey_path(@journey)
   end
 
   def after_sign_out_path_for(resource_or_scope)

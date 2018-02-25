@@ -15,6 +15,7 @@ class JourneysController < ApplicationController
 
   def create
     @journey = Journey.new(journey_params)
+    @journey.token = "123456"
     @journey.save!
     redirect_to new_journey_detail_path(@journey)
   end

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     def create
       @journey = Journey.find(params[:journey_id])
       @user = User.new(user_params)
+      @user.password = @journey.token
       @user.journey = @journey
       if @user.save
         redirect_to new_journey_charge_path(@journey)
