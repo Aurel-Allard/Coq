@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :new
   include Pundit
 
   # Pundit: white-list approach.
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   # Uncomment when you *really understand* Pundit!
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   def user_not_authorized
-    flash[:alert] = "You are not authorized to perform this action."
+    flash[:alert] = "Vous n'êtes pas autorisé à réaliser cette action"
     redirect_to(root_path)
   end
 

@@ -1,10 +1,11 @@
 class JourneyPolicy < ApplicationPolicy
-
-  def new
-    create?
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
   end
 
-  def create?
-    return true
+  def show?
+    record.user == user
   end
 end
