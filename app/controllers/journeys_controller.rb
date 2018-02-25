@@ -2,7 +2,11 @@ class JourneysController < ApplicationController
   # before_action :authenticate_admin!
 
   def index
-    @journeys = Journey.all
+    if current_user.admin
+      @journeys = Journey.all
+    else
+      redirect_to root_path
+    end
   end
 
   def new
