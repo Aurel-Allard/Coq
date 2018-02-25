@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th>id</th>
-        <th>Client</th>
+        <th>user</th>
         <th>Départ</th>
         <th>Retour</th>
         <th>Provenance</th>
@@ -23,7 +23,7 @@
         <!-- data-target="#myModal" -->
         <tr data-toggle="modal<%= i %>" data-id="<%= i %>" >
           <td><%= journey.id %></td>
-          <td class="journey-client"><%= journey.client.name + " " + journey.client.surname %></td>
+          <td class="journey-user"><%= journey.user.name + " " + journey.user.surname %></td>
           <td><%= journey.detail.date %></td>
           <td></td>
           <td><%= journey.origin %></td>
@@ -33,7 +33,7 @@
           <td><%= journey.detail.housing_type %></td>
           <td><%= journey.detail.activity_type %></td>
           <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal-<%= i %>">Infos client</button></td>
-          <%= render partial:'client-info', locals: { i: i, journey: journey } %>
+          <%= render partial:'user-info', locals: { i: i, journey: journey } %>
         </tr>
       <% end %>
     </tbody>

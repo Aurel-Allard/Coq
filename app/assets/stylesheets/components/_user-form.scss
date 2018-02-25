@@ -1,4 +1,4 @@
-#client-banner {
+#user-banner {
   display : flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   }
 }
 
-.client-form {
+.user-form {
   background-color: rgba(255, 255, 255, 0.97);
   width: 600px;
   color: $gray;
@@ -31,10 +31,10 @@
     font-weight: bold;
     margin: 0;
   }
-  .client-form-content {
+  .user-form-content {
     padding: 20px;
   }
-  .client-input {
+  .user-input {
     border: none;
     border-bottom: 1px solid #CCC;
     box-shadow: none;
