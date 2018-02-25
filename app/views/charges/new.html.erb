@@ -26,10 +26,10 @@
       <h4>Numéro de commande</h4>
       <p>N<%= @journey.id %>LCT</p>
       <h4>Nom de réservation</h4>
-      <p><%= @journey.client.gender %> <%= @journey.client.surname %> <%= @journey.client.name %></p>
-      <p><%= @journey.client.address %></p>
-      <p><%= @journey.client.mail %></p>
-      <p><%= @journey.client.phone %></p>
+      <p><%= @journey.user.gender %> <%= @journey.user.surname %> <%= @journey.user.name %></p>
+      <p><%= @journey.user.address %></p>
+      <p><%= @journey.user.email %></p>
+      <p><%= @journey.user.phone %></p>
       <h4>Détails</h4>
       <p><%= @journey.detail.housing_type %></p>
       <p><%= @journey.detail.activity_type ? "Activité : " + @journey.detail.activity_type : "Pas d'activité sélectionnée" %></p>
@@ -46,7 +46,7 @@
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="Mon Séjour"
-          data-email="<%= @journey.client.mail %>"
+          data-email="<%= @journey.user.email %>"
           data-description="Commande N<%= @journey.id %>LCT"
           data-amount="<%= @amount %>"
           data-currency="eur"

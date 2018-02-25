@@ -10,25 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225165136) do
+ActiveRecord::Schema.define(version: 20180225170200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "clients", force: :cascade do |t|
-    t.string "name"
-    t.string "surname"
-    t.string "gender"
-    t.string "address"
-    t.date "birth_date"
-    t.string "phone"
-    t.string "mail"
-    t.boolean "contact"
-    t.bigint "journey_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["journey_id"], name: "index_clients_on_journey_id"
-  end
 
   create_table "details", force: :cascade do |t|
     t.boolean "is_a_surprise"
@@ -56,6 +41,16 @@ ActiveRecord::Schema.define(version: 20180225165136) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "gender"
+    t.string "address"
+    t.date "birth_date"
+    t.string "phone"
+    t.boolean "contact"
+    t.bigint "journey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -66,13 +61,11 @@ ActiveRecord::Schema.define(version: 20180225165136) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "admin"
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["journey_id"], name: "index_users_on_journey_id"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "clients", "journeys"
   add_foreign_key "details", "journeys"
+  add_foreign_key "users", "journeys"
 end

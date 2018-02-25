@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :journeys, only: [ :index,:new, :create, :show ] do
     resources :details, only: [ :new, :create ]
-    resources :clients, only: [ :new, :create ]
+    resources :users, only: [ :new, :create ]
     resources :charges, only: [ :new, :create ]
   end
 

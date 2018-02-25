@@ -9,7 +9,7 @@ class DetailsController < ApplicationController
       @detail = Detail.new(details_params)
       @detail.journey = @journey
       if @detail.save
-        redirect_to new_journey_client_path(@journey)
+        redirect_to new_journey_user_path(@journey)
       else
         render :new
       end

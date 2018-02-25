@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Réservé par <%= journey.client.name + " " + journey.client.surname %></h3>
+        <h3 class="modal-title" id="exampleModalLabel">Réservé par <%= journey.user.name + " " + journey.user.surname %></h3>
       </div>
       <div class="modal-body">
         <div class="modal-block">
@@ -16,12 +16,12 @@
           <p><strong>Points d'attention :</strong></p>
         </div>
         <div class="modal-block">
-          <p><%= journey.client.mail %></p>
-          <p><%= journey.client.gender %></p>
-          <p><%= journey.client.address %></p>
-          <p><%= journey.client.birth_date %></p>
-          <p><%= journey.client.phone %></p>
-          <p><%= journey.client.contact ? "Non" : "Oui" %></p>
+          <p><%= journey.user.mail %></p>
+          <p><%= journey.user.gender %></p>
+          <p><%= journey.user.address %></p>
+          <p><%= journey.user.birth_date %></p>
+          <p><%= journey.user.phone %></p>
+          <p><%= journey.user.contact ? "Non" : "Oui" %></p>
           <p><%= journey.detail.points_of_attention %></p>
         </div>
       </div>
