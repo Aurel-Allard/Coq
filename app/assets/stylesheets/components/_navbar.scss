@@ -51,6 +51,17 @@
 }
 
 /* Dropdown menu */
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: white;
+    font-size: 12px;
+  }
+}
+
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;

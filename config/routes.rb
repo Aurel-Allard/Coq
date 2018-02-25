@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
 
-  get 'client/new'
+  devise_for :users
 
-  resources :journeys, only: [:new, :create, :show, :index] do
+  resources :journeys, only: [ :index,:new, :create, :show ] do
     resources :details, only: [ :new, :create ]
     resources :clients, only: [ :new, :create ]
-    resources :charges, only: [:new, :create]
+    resources :charges, only: [ :new, :create ]
   end
+
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+    delete '/logout', to: 'devise/sessions#destroy'
+  end
+
   resources "contacts", only: [:new, :create]
 
   root to: 'journeys#new'
 
-  match '/sejours', to: 'details#new', via: 'get'
+  # match '/sejour', to: 'details#new', via: 'get'
   match '/contacts', to: 'contacts#new', via: 'get'
 
   get 'pages/about'

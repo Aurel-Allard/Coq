@@ -25,7 +25,7 @@ puts 'Creating false journeys'
     gender: ['M.', 'Mme.'].sample,
     address: Faker::Address.street_address,
     birth_date: Faker::Date.forward(25),
-    phone: Faker::PhoneNumber.cell_phone,
+    phone: '06 07 08 09 10',
     mail: Faker::Internet.email,
     contact: ['true', 'false'].sample
     )
@@ -36,4 +36,19 @@ puts 'Creating false journeys'
   all_clients.save!
   journey.save!
 end
+
+admin_user = User.new(
+  email: 'admin@admin.fr',
+  password: '123456',
+  )
+
+user = User.new(
+  email: 'user@user.fr',
+  password: '123456',
+  )
+
+admin_user.admin = true
+admin_user.save!
+user.save!
+
 puts 'Finished!'
