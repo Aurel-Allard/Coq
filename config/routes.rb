@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   end
 
   # Admin
-  authenticate :user do
-    resources :journeys, only: [:index], path: '/adminlct'
+  # authenticate :user do
+  #   resources :journeys, only: [:index], path: '/log_in'
+  # end
+
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+    delete '/logout', to: 'devise/sessions#destroy'
   end
 
   resources "contacts", only: [:new, :create]

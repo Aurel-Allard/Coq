@@ -17,19 +17,16 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <%= link_to (image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu"), login_path %>
+        <% if user_signed_in? %>
           <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
           </li>
+        <% else %>
           <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-            <% end %>
+            <%= link_to('MON SÉJOUR', login_path) %>
           </li>
-        </ul>
+        <% end %>
       </div>
     </div>
   </div>
