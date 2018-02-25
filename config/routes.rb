@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
+  devise_for :users
 
   resources :journeys, only: [:new, :create, :show] do
     resources :details, only: [ :new, :create ]
@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
 
   # Admin
-  authenticate :admin do
-    resources :journeys, only: [:index], path: '/admin'
+  authenticate :user do
+    resources :journeys, only: [:index], path: '/adminlct'
   end
 
   resources "contacts", only: [:new, :create]

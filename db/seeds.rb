@@ -37,10 +37,10 @@ puts 'Creating false journeys'
   journey.save!
 end
 
-admin = Admin.new(
+user = User.new(
   email: 'admin@admin.fr',
   password: '123456',
   )
-admin.save!
+user.save!
 
 puts 'Finished!'
