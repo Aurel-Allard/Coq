@@ -62,7 +62,8 @@ user_test = User.new(
     phone: '06 07 08 09 10',
     email: "jean-luc@grosfaker.com",
     contact: "true",
-    password: '123456'
+    password: '123456',
+    admin: true
   )
 
 # admin_user.admin = true
