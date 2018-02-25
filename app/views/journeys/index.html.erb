@@ -1,43 +1,41 @@
-<% if current_user.admin? %>
-  <div class="journeys-index">
-    <h1>Séjours</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Client</th>
-          <th>Départ</th>
-          <th>Retour</th>
-          <th>Provenance</th>
-          <th>Nombre</th>
-          <th>Destination</th>
-          <th>Surprise</th>
-          <th>Logement</th>
-          <th>Activité</th>
-          <th>Points d'attention</th>
+<div class="journeys-index">
+  <h1>Séjours</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Client</th>
+        <th>Départ</th>
+        <th>Retour</th>
+        <th>Provenance</th>
+        <th>Nombre</th>
+        <th>Destination</th>
+        <th>Surprise</th>
+        <th>Logement</th>
+        <th>Activité</th>
+        <th>Points d'attention</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% i = 0 %>
+      <% @journeys.each do |journey| %>
+        <% i += 1 %>
+        <!-- data-target="#myModal" -->
+        <tr data-toggle="modal<%= i %>" data-id="<%= i %>" >
+          <td><%= journey.id %></td>
+          <td class="journey-client"><%= journey.client.name + " " + journey.client.surname %></td>
+          <td><%= journey.detail.date %></td>
+          <td></td>
+          <td><%= journey.origin %></td>
+          <td><%= journey.people_count %></td>
+          <td><%= journey.destination_type %></td>
+          <td><%= journey.detail.is_a_surprise ? "Oui":"Non" %></td>
+          <td><%= journey.detail.housing_type %></td>
+          <td><%= journey.detail.activity_type %></td>
+          <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal-<%= i %>">Infos client</button></td>
+          <%= render partial:'client-info', locals: { i: i, journey: journey } %>
         </tr>
-      </thead>
-      <tbody>
-        <% i = 0 %>
-        <% @journeys.each do |journey| %>
-          <% i += 1 %>
-          <!-- data-target="#myModal" -->
-          <tr data-toggle="modal<%= i %>" data-id="<%= i %>" >
-            <td><%= journey.id %></td>
-            <td class="journey-client"><%= journey.client.name + " " + journey.client.surname %></td>
-            <td><%= journey.detail.date %></td>
-            <td></td>
-            <td><%= journey.origin %></td>
-            <td><%= journey.people_count %></td>
-            <td><%= journey.destination_type %></td>
-            <td><%= journey.detail.is_a_surprise ? "Oui":"Non" %></td>
-            <td><%= journey.detail.housing_type %></td>
-            <td><%= journey.detail.activity_type %></td>
-            <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal-<%= i %>">Infos client</button></td>
-            <%= render partial:'client-info', locals: { i: i, journey: journey } %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-<% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

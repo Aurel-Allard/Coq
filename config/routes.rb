@@ -2,15 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :journeys, only: [:new, :create, :show] do
+  resources :journeys, only: [ :index,:new, :create, :show ] do
     resources :details, only: [ :new, :create ]
     resources :clients, only: [ :new, :create ]
-    resources :charges, only: [:new, :create]
+    resources :charges, only: [ :new, :create ]
   end
 
-  # Admin
-  # authenticate :user do
-  #   resources :journeys, only: [:index], path: '/log_in'
+  # authenticated :user do
+  #   resources :journeys, only: [ :index ]
   # end
 
   devise_scope :user do

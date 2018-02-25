@@ -17,13 +17,14 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= link_to (image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu"), login_path %>
         <% if user_signed_in? %>
+          <%= link_to (image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu"), current_user.admin ? journeys_path : root_path %>
           <li>
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
           </li>
         <% else %>
           <li>
+            <%= link_to (image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu"), login_path %>
             <%= link_to('MON SÉJOUR', login_path) %>
           </li>
         <% end %>
