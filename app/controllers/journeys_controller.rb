@@ -5,7 +5,7 @@ class JourneysController < ApplicationController
     if current_user.admin
       @journeys = policy_scope(Journey).order(created_at: :desc)
     else
-      redirect_to root_path
+      user_not_authorized
     end
   end
 
