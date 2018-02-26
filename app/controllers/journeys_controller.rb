@@ -18,6 +18,7 @@ class JourneysController < ApplicationController
     @journey = Journey.new(journey_params)
     authorize @journey
     @journey.token = "123456"
+    @journey.booking_ip = request.remote_ip
     @journey.save!
     redirect_to new_journey_detail_path(@journey)
   end
