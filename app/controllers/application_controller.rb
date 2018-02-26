@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :authenticate_user!, except: [ :new, :faq ]
+  # before_action :authenticate_user!, except: [ :new, :faq ]
   include Pundit
 
   # Pundit: white-list approach.
