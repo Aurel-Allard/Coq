@@ -5,7 +5,7 @@ class JourneysController < ApplicationController
     if current_user.admin
       @journeys = policy_scope(Journey).order(created_at: :desc)
     else
-      redirect_to root_path
+      user_not_authorized
     end
   end
 
@@ -18,8 +18,13 @@ class JourneysController < ApplicationController
     @journey = Journey.new(journey_params)
     authorize @journey
     @journey.token = "123456"
-    @journey.save!
-    redirect_to new_journey_detail_path(@journey)
+    @journey.booking_ip = request.remote_ip
+    @journey.status = "Journey created"
+    if @journey.save!
+      redirect_to new_journey_detail_path(@journey)
+    else
+      redirect_to root_path
+    end
   end
 
   def show

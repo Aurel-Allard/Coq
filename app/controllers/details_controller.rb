@@ -3,17 +3,22 @@ class DetailsController < ApplicationController
       @journey = Journey.find(params[:journey_id])
       authorize @journey
 
-      @detail = Detail.new
-      authorize @detail
+      if @journey.booking_ip == request.remote_ip && @journey.status = "Journey created"
+        @detail = Detail.new
+        authorize @detail
+      else
+        user_not_authorized
+      end
     end
 
     def create
       @journey = Journey.find(params[:journey_id])
-      authorize @journey
-
       @detail = Detail.new(details_params)
+
+      authorize @journey
       authorize @detail
 
+      @journey.update(status: "Details created")
       @detail.journey = @journey
       if @detail.save
         redirect_to new_journey_user_path(@journey)

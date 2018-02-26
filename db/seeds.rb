@@ -7,7 +7,8 @@ puts 'Creating false journeys'
   journey = Journey.new(
     origin: ['Paris', 'Lille', 'Bordeaux'].sample,
     people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
-    destination_type: ['Ville', 'Campagne', 'Mer'].sample
+    destination_type: ['Ville', 'Campagne', 'Mer'].sample,
+    status: 'Paid'
   )
 
   all_details = Detail.new(
@@ -43,7 +44,8 @@ end
 user_journey = Journey.new(
     origin: ['Paris', 'Lille', 'Bordeaux'].sample,
     people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
-    destination_type: ['Ville', 'Campagne', 'Mer'].sample
+    destination_type: ['Ville', 'Campagne', 'Mer'].sample,
+    status: 'Paid'
   )
 
 user_details = Detail.new(
