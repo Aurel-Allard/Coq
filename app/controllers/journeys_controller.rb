@@ -19,8 +19,12 @@ class JourneysController < ApplicationController
     authorize @journey
     @journey.token = "123456"
     @journey.booking_ip = request.remote_ip
-    @journey.save!
-    redirect_to new_journey_detail_path(@journey)
+    @journey.status = "Journey created"
+    if @journey.save!
+      redirect_to new_journey_detail_path(@journey)
+    else
+      redirect_to root_path
+    end
   end
 
   def show

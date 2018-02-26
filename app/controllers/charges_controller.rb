@@ -2,6 +2,9 @@ class ChargesController < ApplicationController
   before_action :set_amount, :set_journey
 
   def new
+    if not @journey.booking_ip == request.remote_ip && @journey.status = "Client created"
+      user_not_authorized
+    end
   end
 
   def create
@@ -18,6 +21,8 @@ class ChargesController < ApplicationController
     )
 
     @journey.detail.update(payment: charge.to_json, state: 'paid')
+    @journey.update(status: "Paid")
+
     redirect_to journey_charges_path(@journey)
 
   rescue Stripe::CardError => e
