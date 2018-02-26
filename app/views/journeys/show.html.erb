@@ -19,7 +19,7 @@
         <p><%= @journey.user.phone %></p>
       <h4>Détails</h4>
         <p><%= @journey.detail.housing_type %></p>
-        <p><%= @journey.detail.activity_type ? "Activité : " + @journey.detail.activity_type : "Pas d'activité sélectionnée" %></p>
+        <p><%= @journey.detail.activity_type ? "Activité : " + @journey.detail.activity_type : "Aucune activité sélectionnée" %></p>
         <% if @journey.detail.points_of_attention %>
           <p>Points d'attentions :</p>
           <p><%= @journey.detail.points_of_attention %></p>
