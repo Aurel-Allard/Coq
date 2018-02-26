@@ -1,9 +1,9 @@
 class JourneysController < ApplicationController
-  # before_action :authenticate_admin!
+  before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     if current_user.admin
-      @journeys = Journey.all
+      @journeys = policy_scope(Journey).order(created_at: :desc)
     else
       redirect_to root_path
     end
@@ -11,10 +11,12 @@ class JourneysController < ApplicationController
 
   def new
     @journey = Journey.new
+    authorize @journey
   end
 
   def create
     @journey = Journey.new(journey_params)
+    authorize @journey
     @journey.token = "123456"
     @journey.save!
     redirect_to new_journey_detail_path(@journey)
@@ -22,7 +24,7 @@ class JourneysController < ApplicationController
 
   def show
     @journey = Journey.find(params[:id])
-    # UserMailer.confirmation(@journey).deliver_now
+    authorize @journey
   end
 
   private

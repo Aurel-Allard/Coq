@@ -38,6 +38,8 @@ puts 'Creating false journeys'
   journey.save!
 end
 
+#Any random user or client
+
 user_journey = Journey.new(
     origin: ['Paris', 'Lille', 'Bordeaux'].sample,
     people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
@@ -62,14 +64,51 @@ user_test = User.new(
     phone: '06 07 08 09 10',
     email: "jean-luc@grosfaker.com",
     contact: "true",
-    password: '123456'
+    password: '123456',
   )
 
-# admin_user.admin = true
+
 user_journey.detail = user_details
 user_journey.user = user_test
 user_details.save!
 user_test.save!
 user_journey.save!
+
+
+# Admin
+
+admin_journey = Journey.new(
+    origin: "Admin",
+    people_count: "Admin",
+    destination_type: "Admin"
+  )
+
+admin_details = Detail.new(
+    is_a_surprise: "false",
+    date: Date.new(2018,2,3),
+    housing_type: "Admin",
+    activity_type: "Admin",
+    points_of_attention: "Admin",
+    price_cents: 0
+    )
+
+admin_test = User.new(
+    name: "Admin",
+    surname: "Admin",
+    gender: "All",
+    address: "Admin",
+    birth_date: Faker::Date.forward(25),
+    phone: '06 99 99 99 99',
+    email: "admin@admin.lct",
+    contact: "false",
+    password: '123456',
+    admin: true
+  )
+
+admin_journey.detail = admin_details
+admin_journey.user = admin_test
+admin_details.save!
+admin_test.save!
+admin_journey.save!
 
 puts 'Finished!'

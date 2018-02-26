@@ -1,24 +1,31 @@
 class UsersController < ApplicationController
+  before_action :set_journey
+
   def new
-      @journey = Journey.find(params[:journey_id])
-      @user = User.new
-    end
+    @user = User.new
+    authorize @user
+  end
 
-    def create
-      @journey = Journey.find(params[:journey_id])
-      @user = User.new(user_params)
-      @user.password = @journey.token
-      @user.journey = @journey
-      if @user.save
-        redirect_to new_journey_charge_path(@journey)
-      else
-        render :new
-      end
+  def create
+    @user = User.new(user_params)
+    authorize @user
+    @user.password = @journey.token
+    @user.journey = @journey
+    if @user.save
+      redirect_to new_journey_charge_path(@journey)
+    else
+      render :new
     end
+  end
 
-    private
+  private
 
-    def user_params
-      params.require(:user).permit(:name, :surname, :gender, :address, :birth_date, :email, :phone, :contact)
-    end
+  def user_params
+    params.require(:user).permit(:name, :surname, :gender, :address, :birth_date, :email, :phone, :contact)
+  end
+
+  def set_journey
+    @journey = Journey.find(params[:journey_id])
+    authorize @journey
+  end
 end

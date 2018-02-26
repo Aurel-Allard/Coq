@@ -1,13 +1,10 @@
 class ChargesController < ApplicationController
-  before_action :set_amount
+  before_action :set_amount, :set_journey
 
   def new
-    @journey = Journey.find(params[:journey_id])
   end
 
   def create
-    @journey = Journey.find(params[:journey_id])
-
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
@@ -32,10 +29,12 @@ private
 
   def set_amount
     @journey = Journey.find(params[:journey_id])
+    authorize @journey
     @amount = @journey.detail.price.cents;
   end
 
   def set_journey
-    params.require(:journey).permit(:origin, :people_count, :destination_type)
+    @journey = Journey.find(params[:journey_id])
+    authorize @journey
   end
 end
