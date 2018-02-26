@@ -17,26 +17,27 @@
     <h4><%= @amount / 100 %>€</h4>
   </div>
 </div>
-<div id="summary-banner">
+<div class="empty-steps-div"></div>
+<div id="charge-banner">
   <div class="summary-block">
     <div class="summary-content">
       <h2>Vérifications et Paiement</h2>
       <h3 style="margin-bottom: 10px;"><%= @journey.people_count[/[123456789]/] %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
       <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
-      <p>N<%= @journey.id %>LCT</p>
+        <p>N<%= @journey.id %>LCT</p>
       <h4>Nom de réservation</h4>
-      <p><%= @journey.user.gender %> <%= @journey.user.surname %> <%= @journey.user.name %></p>
-      <p><%= @journey.user.address %></p>
-      <p><%= @journey.user.email %></p>
-      <p><%= @journey.user.phone %></p>
+        <p><%= @journey.user.gender %> <%= @journey.user.surname %> <%= @journey.user.name %></p>
+        <p><%= @journey.user.address %></p>
+        <p><%= @journey.user.email %></p>
+        <p><%= @journey.user.phone %></p>
       <h4>Détails</h4>
-      <p><%= @journey.detail.housing_type %></p>
-      <p><%= @journey.detail.activity_type ? "Activité : " + @journey.detail.activity_type : "Pas d'activité sélectionnée" %></p>
-      <% if @journey.detail.points_of_attention %>
-        <p>Points d'attentions (promis, on sera vigilants !) :</p>
-        <p><%= @journey.detail.points_of_attention %></p>
-      <% end %>
+        <p><%= @journey.detail.housing_type %></p>
+        <p><%= @journey.detail.activity_type ? "Activité : " + @journey.detail.activity_type : "Pas d'activité sélectionnée" %></p>
+        <% if @journey.detail.points_of_attention %>
+          <p>Points d'attentions (promis, on sera vigilants !) :</p>
+          <p><%= @journey.detail.points_of_attention %></p>
+        <% end %>
       <div class="summary-price">
         <h4>TOTAL</h4>
         <h4><%= @amount / 100 %>€</h4>

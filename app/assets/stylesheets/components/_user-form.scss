@@ -1,12 +1,12 @@
 #user-banner {
-  display : flex;
-  justify-content: center;
-  align-items: center;
+  // display : flex;
+  // justify-content: center;
+  // align-items: center;
   // background: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(101, 100, 91, 0.6) 50%), image-url('banner.jpg');
   background-color: white;
   background-attachment: fixed;
   color: white;
-  height: 800px;
+  height: 750px;
   background-size: cover !important;
   h3 {
     color: $gray;
@@ -17,10 +17,10 @@
   background-color: rgba(255, 255, 255, 0.97);
   width: 600px;
   color: $gray;
-  margin: 40px auto;
+  margin: 0 auto;
   h2 {
     text-align: center;
-    // padding: 20px 0;
+    padding: 0;
   }
   h3 {
     text-align: left;

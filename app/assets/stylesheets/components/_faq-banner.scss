@@ -3,9 +3,6 @@ $color1: #46669A;
 $color2: #5F9CCA;
 
 #faq-content {
-  position: relative;
-  top: 50px;
-
   h1 {
     color: $main;
     margin-top: 10px;
@@ -34,6 +31,30 @@ $color2: #5F9CCA;
 
   ul {
     list-style-type: none;
+  }
+}
+
+.btn-faq {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: $main;
+  background-color: transparent;
+  text-align: center;
+  border: 1px solid $main;
+  margin: 25px auto !important;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all .2s ease-in-out;
+  &:hover {
+    border: 1px solid $main;
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    // transform: scale(1.05);
+    background-color: $main;
   }
 }
 
