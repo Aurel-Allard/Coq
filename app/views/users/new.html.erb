@@ -22,27 +22,32 @@
   <div class="user-form">
     <div class="user-form-content">
       <%= simple_form_for [@journey, @user], defaults: { label: false, input_html: { class: 'user-input' } } do |f| %>
-        <h2>Mes informations</h2>
-        <%= f.input :name, placeholder: "Prénom*", error: 'Nous avons besoin de votre nom :)' %>
-        <%= f.input :surname, placeholder: "Nom de famille*", error: 'Votre prénom est nécessaire à la réservation !' %>
-        <%= f.input :gender, prompt: "Vous êtes*", collection: ['Une Femme', 'Un Homme'], error: 'Merci de renseigner ce champs' %>
-        <%= f.input :address, placeholder: "Adresse*", error: 'Merci de renseigner ce champs', input_html: { id: 'flat_address' }%>
-        <%= f.input :birth_date, label: "Date de naissance*" %>
-        <%= f.input :email, placeholder: "email*", error: 'Votre mail est invalide, veuillez réessayer.' %>
-        <%= f.input :phone, placeholder: "Téléphone portable*", input_html: { id: 'user-phone' }, error: 'Le format est invalide.' %>
-        <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
-        <%= @people_count %>
+        <h2>Qui participe à ce séjour ?</h2>
+        <ul class="accordeon-user">
+          <li class="accordeon-user_item">
+            <h4 class="accordeon-user_title">Voyageur principal</h4>
+            <div class="accordeon-user_content">
+              <%= f.input :name, placeholder: "Prénom*", error: 'Nous avons besoin de votre nom :)' %>
+              <%= f.input :surname, placeholder: "Nom de famille*", error: 'Votre prénom est nécessaire à la réservation !' %>
+              <%= f.input :gender, prompt: "Vous êtes*", collection: ['Une Femme', 'Un Homme'], error: 'Merci de renseigner ce champs' %>
+              <%= f.input :address, placeholder: "Adresse*", error: 'Merci de renseigner ce champs', input_html: { id: 'flat_address' }%>
+              <%= f.input :birth_date, label: "Date de naissance*" %>
+              <%= f.input :email, placeholder: "email*", error: 'Votre mail est invalide, veuillez réessayer.' %>
+              <%= f.input :phone, placeholder: "Téléphone portable*", input_html: { id: 'user-phone' }, error: 'Le format est invalide.' %>
+              <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
+            </div>
+          </li>
+        </ul>
 
-        <% if @journey.people_count == "1 trotteur" %>
+        <% (@people_count - 1).times do |i| %>
           <ul class="accordeon-user">
             <li class="accordeon-user_item">
-              <h4 class="accordeon-user_title">Voyageur 2</h4>
+              <h4 class="accordeon-user_title">Voyageur <%= i + 2 %>*</h4>
               <div class="accordeon-user_content">
-                <%= f.input :traveller_two_name, placeholder: "Prénom*" %>
-                <%= f.input :traveller_two_surname, placeholder: "Nom de famille*" %>
-                <%= f.input :traveller_two_age, placeholder: "Âge*" %>
-                <%= f.input :traveller_two_gender, placeholder: "Ce voyageur est*", collection: ['Une Femme', 'Un Homme'] %>
-                <%= f.input :traveller_two_email, placeholder: "Email" %>
+                <%= f.input :"traveller_#{i + 2}_name", placeholder: "Prénom*" %>
+                <%= f.input :"traveller_#{i + 2}_age", placeholder: "Âge*" %>
+                <%= f.input :"traveller_#{i + 2}_gender", prompt: "Ce voyageur est*", collection: ['Une Femme', 'Un Homme'] %>
+                <%= f.input :"traveller_#{i + 2}_email", placeholder: "Email" %>
               </div>
             </li>
           </ul>
