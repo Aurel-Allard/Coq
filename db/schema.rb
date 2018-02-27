@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226113545) do
+ActiveRecord::Schema.define(version: 20180227140837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,31 @@ ActiveRecord::Schema.define(version: 20180226113545) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.boolean "admin"
+    t.string "traveler_two_name"
+    t.string "traveler_two_surname"
+    t.string "traveler_two_gender"
+    t.string "traveler_two_age"
+    t.string "traveler_two_email"
+    t.string "traveler_three_name"
+    t.string "traveler_three_surname"
+    t.string "traveler_three_gender"
+    t.string "traveler_three_age"
+    t.string "traveler_three_email"
+    t.string "traveler_four_name"
+    t.string "traveler_four_surname"
+    t.string "traveler_four_gender"
+    t.string "traveler_four_age"
+    t.string "traveler_four_email"
+    t.string "traveler_five_name"
+    t.string "traveler_five_surname"
+    t.string "traveler_five_gender"
+    t.string "traveler_five_age"
+    t.string "traveler_five_email"
+    t.string "traveler_six_name"
+    t.string "traveler_six_surname"
+    t.string "traveler_six_gender"
+    t.string "traveler_six_age"
+    t.string "traveler_six_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["journey_id"], name: "index_users_on_journey_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
