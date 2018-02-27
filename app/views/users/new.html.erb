@@ -31,6 +31,23 @@
         <%= f.input :email, placeholder: "email*", error: 'Votre mail est invalide, veuillez réessayer.' %>
         <%= f.input :phone, placeholder: "Téléphone portable*", input_html: { id: 'user-phone' }, error: 'Le format est invalide.' %>
         <%= f.input :contact, label: "Je désire être aussi contacté par sms"%>
+        <%= @people_count %>
+
+        <% if @journey.people_count == "1 trotteur" %>
+          <ul class="accordeon-user">
+            <li class="accordeon-user_item">
+              <h4 class="accordeon-user_title">Voyageur 2</h4>
+              <div class="accordeon-user_content">
+                <%= f.input :traveller_two_name, placeholder: "Prénom*" %>
+                <%= f.input :traveller_two_surname, placeholder: "Nom de famille*" %>
+                <%= f.input :traveller_two_age, placeholder: "Âge*" %>
+                <%= f.input :traveller_two_gender, placeholder: "Ce voyageur est*", collection: ['Une Femme', 'Un Homme'] %>
+                <%= f.input :traveller_two_email, placeholder: "Email" %>
+              </div>
+            </li>
+          </ul>
+        <% end %>
+
         <%= f.submit "SUIVANT", class: "btn btn-primary" %>
       <% end %>
     </div>
@@ -40,6 +57,20 @@
 <script>
   $(document).ready(function() {
     $("#user-phone").mask("99 99 99 99 99");
+
+    $(function(){
+      // hide all content
+      $('.accordeon-user_content').hide();
+
+      $('.accordeon-user_title').click(function(){
+        $(this).parent().toggleClass('active').siblings().removeClass('active');
+        $('.accordeon-user_content').slideUp();
+
+        if(!$(this).next().is(":visible")) {
+          $(this).next().slideDown();
+        }
+      });
+    });
   });
 </script>
 

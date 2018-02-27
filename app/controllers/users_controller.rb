@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @people_count = @journey.people_count[/[123456789]/].to_i
     authorize @user
 
     if not @journey.booking_ip == request.remote_ip && @journey.status = "Details created"
