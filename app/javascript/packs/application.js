@@ -1,8 +1,10 @@
 import "bootstrap";
 
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import { anchorScroll } from '../components/anchor_scroll';
 import { autocomplete } from '../components/autocomplete';
 import { fadeIn } from '../components/fade_in';
+import { DatePicker } from '../components/DatePicker';
 
 
 anchorScroll();
