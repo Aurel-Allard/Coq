@@ -12,12 +12,13 @@ class DatesSelection extends React.Component {
         endDate: null,
         focusedInput: null,
         displayFormat: "DD/MM/YYYY",
+        //
       };
     }
 
     render() {
       return (
-        <div className="App">
+        <div className="DatePicker">
           <DateRangePicker
             startDate={this.state.startDate}
             endDate={this.state.endDate}
