@@ -5,23 +5,29 @@ import { DateRangePicker } from 'react-dates';
 
 class DatesSelection extends React.Component {
   constructor(props) {
-      super(props);
-      moment.locale('fr');
-      this.state = {
-        startDate: null,
-        endDate: null,
-        focusedInput: null,
-        displayFormat: "DD/MM/YYYY",
-        //
-      };
+    super(props);
+    moment.locale('fr');
+    this.state = {
+      startDate: moment(),
+      endDate: moment(),
+      focusedInput: null,
+      displayFormat: "DD/MM/YYYY",
+    };
+  }
+
+  handleChange(event) {
+    console.log(this.state.startDate);
     }
 
-    render() {
-      return (
+  render() {
+    return (
+      <div>
         <div className="DatePicker">
           <DateRangePicker
             startDate={this.state.startDate}
+            startDateId="details-start-date"
             endDate={this.state.endDate}
+            endDateId="details-end-date"
             onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate })}}
             focusedInput={this.state.focusedInput}
             onFocusChange={(focusedInput) => { this.setState({ focusedInput })}}
@@ -31,8 +37,9 @@ class DatesSelection extends React.Component {
             endDatePlaceholderText="Retour"
           />
         </div>
-      );
-    }
+      </div>
+    );
   }
+}
 
 export default DatesSelection
