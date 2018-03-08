@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180308124212) do
   enable_extension "plpgsql"
 
   create_table "details", force: :cascade do |t|
-    t.boolean "is_a_surprise"
+    t.boolean "is_a_surprise?"
     t.date "start_date"
     t.date "end_date"
     t.string "housing_type"
