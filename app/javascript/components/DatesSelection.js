@@ -15,27 +15,32 @@ class DatesSelection extends React.Component {
     };
   }
 
-  handleChange(event) {
-    console.log(this.state.startDate);
-    }
-
   render() {
+    var blocked = [];
+    for (var i = 0; i < 7; i++){
+      blocked.push(moment().add(i, 'days'));
+    }
+    const isDayBlocked = day => blocked.filter(d => d.isSame(day, 'day')).length > 0;
+    const overbooked = [moment(), moment().add(10, 'days')];
+    const isDayHighlighted = day => overbooked.filter(d => d.isSame(day, 'day')).length > 0;
+
     return (
       <div>
         <div className="DatePicker">
           <DateRangePicker
-            startDate={this.state.startDate}
-            startDateId="start_date"
-            endDate={this.state.endDate}
-            endDateId="end_date"
-            onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate })}}
-            focusedInput={this.state.focusedInput}
-            onFocusChange={(focusedInput) => { this.setState({ focusedInput })}}
-            displayFormat={this.state.displayFormat}
+            startDate = {this.state.startDate}
+            startDateId = "start_date"
+            endDate = {this.state.endDate}
+            endDateId = "end_date"
+            onDatesChange = {({ startDate, endDate })  => { this.setState({ startDate, endDate })}}
+            focusedInput = {this.state.focusedInput}
+            onFocusChange = {(focusedInput)  => { this.setState({ focusedInput })}}
+            displayFormat = {this.state.displayFormat}
             showClearDates
-            startDatePlaceholderText="Départ"
-            endDatePlaceholderText="Retour"
-            isDayBlocked={isDayBlocked(2)} autofocus
+            startDatePlaceholderText = "Départ"
+            endDatePlaceholderText = "Retour"
+            isDayBlocked = {isDayBlocked} autofocus
+            isDayHighlighted = {isDayHighlighted} autofocus
           />
         </div>
       </div>
