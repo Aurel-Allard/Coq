@@ -12,7 +12,8 @@ puts 'Creating false journeys'
   )
 
   all_details = Detail.new(
-    is_a_surprise: ['true', 'false'].sample,
+    is_a_surprise?: ['true', 'false'].sample,
+    travel_with_car?: ['true', 'false'].sample,
     start_date: Date.new(2018,2,3),
     end_date: Date.new(2018,2,8),
     housing_type: ['Nid douillet', 'Chic' ].sample,
@@ -50,7 +51,8 @@ user_journey = Journey.new(
   )
 
 user_details = Detail.new(
-    is_a_surprise: ['true', 'false'].sample,
+    is_a_surprise?: ['true', 'false'].sample,
+    travel_with_car?: ['true', 'false'].sample,
     start_date: Date.new(2018,2,3),
     end_date: Date.new(2018,2,8),
     housing_type: ['Nid douillet', 'Chic' ].sample,
@@ -88,7 +90,8 @@ admin_journey = Journey.new(
   )
 
 admin_details = Detail.new(
-    is_a_surprise: "false",
+    is_a_surprise?: "false",
+    travel_with_car?: "false",
     start_date: "",
     end_date: "",
     housing_type: "Admin",
