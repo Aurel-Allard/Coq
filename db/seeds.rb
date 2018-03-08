@@ -13,7 +13,8 @@ puts 'Creating false journeys'
 
   all_details = Detail.new(
     is_a_surprise: ['true', 'false'].sample,
-    date: Date.new(2018,2,3),
+    start_date: Date.new(2018,2,3),
+    end_date: Date.new(2018,2,8),
     housing_type: ['Nid douillet', 'Chic' ].sample,
     activity_type: ['Aucune', 'Sport', 'Gastronomie', 'Culture' ].sample,
     points_of_attention: 'n.a.',
@@ -50,7 +51,8 @@ user_journey = Journey.new(
 
 user_details = Detail.new(
     is_a_surprise: ['true', 'false'].sample,
-    date: Date.new(2018,2,3),
+    start_date: Date.new(2018,2,3),
+    end_date: Date.new(2018,2,8),
     housing_type: ['Nid douillet', 'Chic' ].sample,
     activity_type: ['Aucune', 'Sport', 'Gastronomie', 'Culture' ].sample,
     points_of_attention: 'n.a.',
@@ -87,7 +89,8 @@ admin_journey = Journey.new(
 
 admin_details = Detail.new(
     is_a_surprise: "false",
-    date: Date.new(2018,2,3),
+    start_date: "",
+    end_date: "",
     housing_type: "Admin",
     activity_type: "Admin",
     points_of_attention: "Admin",

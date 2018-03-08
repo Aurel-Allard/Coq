@@ -28,6 +28,7 @@ gem 'stripe'
 gem 'mail_form'
 gem 'devise'
 gem 'pundit'
+gem 'react-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

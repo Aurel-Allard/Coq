@@ -19,7 +19,11 @@ class DetailsController < ApplicationController
       authorize @detail
 
       @journey.update(status: "Details created")
+
       @detail.journey = @journey
+      @detail.start_date = params[:start_date]
+      @detail.end_date = params[:end_date]
+raise
       if @detail.save
         redirect_to new_journey_user_path(@journey)
       else
@@ -30,6 +34,6 @@ class DetailsController < ApplicationController
     private
 
     def details_params
-      params.require(:detail).permit(:date, :is_a_surprise, :housing_type, :activity_type, :points_of_attention)
+      params.require(:detail).permit(:is_a_surprise, :housing_type, :activity_type, :points_of_attention)
     end
 end
