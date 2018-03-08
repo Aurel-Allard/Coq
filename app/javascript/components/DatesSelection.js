@@ -21,7 +21,11 @@ class DatesSelection extends React.Component {
       blocked.push(moment().add(i, 'days'));
     }
     const isDayBlocked = day => blocked.filter(d => d.isSame(day, 'day')).length > 0;
-    const overbooked = [moment(), moment().add(10, 'days')];
+
+    var overbooked = [];
+    for (var i = 0; i < 7; i++){
+      overbooked.push();
+    }
     const isDayHighlighted = day => overbooked.filter(d => d.isSame(day, 'day')).length > 0;
 
     return (
@@ -39,8 +43,8 @@ class DatesSelection extends React.Component {
             showClearDates
             startDatePlaceholderText = "Départ"
             endDatePlaceholderText = "Retour"
-            isDayBlocked = {isDayBlocked} autofocus
-            isDayHighlighted = {isDayHighlighted} autofocus
+            isDayBlocked = {isDayBlocked}
+            isDayHighlighted = {isDayHighlighted}
           />
         </div>
       </div>
