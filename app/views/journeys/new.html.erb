@@ -14,9 +14,9 @@
           <h2>I am a Franchouillard</h2>
           <div class="home-form-content">
             <%= simple_form_for @journey do |f| %>
-              <%= f.input :origin, prompt: "D'où partez-vous ?", label: false, collection: ['Paris'] %>
-              <%= f.input :people_count, prompt: "Nombre de personnes", label: false, collection: ['1 trotteur', '2 trotteurs', '3 trotteurs', '4 trotteurs', '5 trotteurs', '6 trotteurs',] %>
-              <%= f.input :destination_type, prompt: "Type de destination", label: false, collection: ['Ville', 'Mer', 'Campagne'] %>
+              <%= f.input :origin, prompt: "D'où partez-vous ?", label: false, collection: ['Paris'], error: 'Veuillez indiquer votre lieu de départ.' %>
+              <%= f.input :people_count, prompt: "Nombre de personnes", label: false, collection: ['1 trotteur', '2 trotteurs', '3 trotteurs', '4 trotteurs', '5 trotteurs', '6 trotteurs'], error: 'Dites-nous à combien vous désirez partir!' %>
+              <%= f.input :destination_type, prompt: "Type de destination", label: false, collection: ['Ville', 'Mer', 'Campagne'], error: 'Allez, on est sûr que vous avez une petite préférence ;)' %>
               <%= f.submit "JE REDÉCOUVRE LE PAYS !", class: "btn btn-primary" %>
             <% end %>
           </div>
