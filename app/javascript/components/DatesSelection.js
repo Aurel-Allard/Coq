@@ -35,6 +35,7 @@ class DatesSelection extends React.Component {
             showClearDates
             startDatePlaceholderText="Départ"
             endDatePlaceholderText="Retour"
+            isDayBlocked={isDayBlocked(2)} autofocus
           />
         </div>
       </div>
