@@ -8,8 +8,8 @@ class DatesSelection extends React.Component {
     super(props);
     moment.locale('fr');
     this.state = {
-      startDate: moment(),
-      endDate: moment(),
+      startDate: null,
+      endDate: null,
       focusedInput: null,
       displayFormat: "DD/MM/YYYY",
     };
@@ -25,9 +25,9 @@ class DatesSelection extends React.Component {
         <div className="DatePicker">
           <DateRangePicker
             startDate={this.state.startDate}
-            startDateId="details-start-date"
+            startDateId="start_date"
             endDate={this.state.endDate}
-            endDateId="details-end-date"
+            endDateId="end_date"
             onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate })}}
             focusedInput={this.state.focusedInput}
             onFocusChange={(focusedInput) => { this.setState({ focusedInput })}}
