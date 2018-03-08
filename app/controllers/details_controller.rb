@@ -23,6 +23,7 @@ class DetailsController < ApplicationController
       @detail.journey = @journey
       @detail.start_date = params[:start_date]
       @detail.end_date = params[:end_date]
+
       if @detail.save
         redirect_to new_journey_user_path(@journey)
       else

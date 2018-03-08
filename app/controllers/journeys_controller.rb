@@ -19,6 +19,7 @@ class JourneysController < ApplicationController
     authorize @journey
     @journey.booking_ip = request.remote_ip
     @journey.status = "Journey created"
+
     if @journey.save
       redirect_to new_journey_detail_path(@journey)
     else

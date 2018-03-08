@@ -45,6 +45,7 @@ class DatesSelection extends React.Component {
             endDatePlaceholderText = "Retour"
             isDayBlocked = {isDayBlocked}
             isDayHighlighted = {isDayHighlighted}
+            hideKeyboardShortcutsPanel
           />
         </div>
       </div>
