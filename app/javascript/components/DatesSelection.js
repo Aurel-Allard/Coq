@@ -28,6 +28,12 @@ class DatesSelection extends React.Component {
     }
     const isDayHighlighted = day => overbooked.filter(d => d.isSame(day, 'day')).length > 0;
 
+    const start = this.state.startDate;
+    const end = this.state.endDate;
+    if (start != null && end != null) {
+      console.log(end.diff(start, 'days'));
+    }
+
     return (
       <div>
         <div className="DatePicker">

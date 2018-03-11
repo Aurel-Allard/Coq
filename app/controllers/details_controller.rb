@@ -3,8 +3,8 @@ class DetailsController < ApplicationController
       @journey = Journey.find(params[:journey_id])
       authorize @journey
 
-      nb = Pricing.new
-      @diff = nb.number_of_days("a", "b")
+      # nb = Pricing.new
+      # @diff = DatesSelection
 
       if @journey.booking_ip == request.remote_ip && @journey.status = "Journey created"
         @detail = Detail.new
