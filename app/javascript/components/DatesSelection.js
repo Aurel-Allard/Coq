@@ -16,9 +16,10 @@ class DatesSelection extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   ReactDOM.render(document.getElementById('start_date'));
-  // }
+  componentDidUpdate() {
+    window.start_date = this.state.startDate;
+    window.end_date = this.state.endDate;
+  }
 
   render() {
     var blocked = [];
@@ -32,14 +33,6 @@ class DatesSelection extends React.Component {
       overbooked.push();
     }
     const isDayHighlighted = day => overbooked.filter(d => d.isSame(day, 'day')).length > 0;
-
-    const start = this.state.startDate;
-    const end = this.state.endDate;
-    if (start != null && end != null) {
-      console.log(end.diff(start, 'days'));
-    } else {
-      console.log("No dates");
-    }
 
     return (
       <div>
