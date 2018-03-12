@@ -1,4 +1,5 @@
 import React from "react"
+import ReactDOM from 'react-dom';
 import PropTypes from "prop-types"
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
@@ -14,6 +15,10 @@ class DatesSelection extends React.Component {
       displayFormat: "DD/MM/YYYY",
     };
   }
+
+  // componentDidMount() {
+  //   ReactDOM.render(document.getElementById('start_date'));
+  // }
 
   render() {
     var blocked = [];
@@ -32,6 +37,8 @@ class DatesSelection extends React.Component {
     const end = this.state.endDate;
     if (start != null && end != null) {
       console.log(end.diff(start, 'days'));
+    } else {
+      console.log("No dates");
     }
 
     return (

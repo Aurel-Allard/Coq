@@ -23,6 +23,7 @@
     <div class="user-form-content">
       <%= simple_form_for [@journey, @user], defaults: { label: false, input_html: { class: 'user-input' } } do |f| %>
         <h2>Mes informations</h2>
+        <%= @pricing.amount %>
         <%= f.input :name, placeholder: "Prénom*", error: 'Nous avons besoin de votre nom :)' %>
         <%= f.input :surname, placeholder: "Nom de famille*", error: 'Votre prénom est nécessaire à la réservation !' %>
         <%= f.input :gender, prompt: "Vous êtes*", collection: ['Une Femme', 'Un Homme'], error: 'Merci de renseigner ce champs' %>

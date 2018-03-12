@@ -5,6 +5,15 @@ class UsersController < ApplicationController
     @user = User.new
     authorize @user
 
+    start_date = @journey.detail.start_date
+    end_date = @journey.detail.end_date
+    people_count = @journey.people_count[/[123456789]/].to_i
+
+    @pricing = Pricing.new(start_date, end_date, people_count)
+    @pricing.number_of_days
+
+    raise
+
     if not @journey.booking_ip == request.remote_ip && @journey.status = "Details created"
       user_not_authorized
     end
