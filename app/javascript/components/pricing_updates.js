@@ -4,7 +4,6 @@ function pricing_updates () {
     if (start_date != null && end_date != null) {
       var diff = end_date.diff(start_date, 'days');
       var price;
-      var people_count = <% @journey.people_count %>;
       switch(diff) {
         case 0:
           price = 90;
@@ -19,12 +18,11 @@ function pricing_updates () {
           price = 65;
           break;
       }
-      document.getElementById("display-current-price").innerHTML = price + "€";
+      document.getElementById("display-current-price").innerHTML = price + "<h4>€ par voyageur</h4>";
       console.log(people_count);
     } else {
       console.log("No dates");
     }
-
   });
 }
 

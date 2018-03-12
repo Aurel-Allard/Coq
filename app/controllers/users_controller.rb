@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     start_date = @journey.detail.start_date
     end_date = @journey.detail.end_date
-    people_count = @journey.people_count[/[123456789]/].to_i
+    people_count = @journey.people_count.to_i
 
     @pricing = Pricing.new(start_date, end_date, people_count)
     @pricing.number_of_days

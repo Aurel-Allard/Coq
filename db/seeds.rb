@@ -6,7 +6,7 @@ puts 'Creating false journeys'
 5.times do
   journey = Journey.new(
     origin: ['Paris', 'Lille', 'Bordeaux'].sample,
-    people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
+    people_count: (1..6).to_a.sample.to_s + "trotteur(s)",
     destination_type: ['Ville', 'Campagne', 'Mer'].sample,
     status: 'Paid'
   )
@@ -45,7 +45,7 @@ end
 
 user_journey = Journey.new(
     origin: ['Paris', 'Lille', 'Bordeaux'].sample,
-    people_count: (1..6).to_a.sample.to_s + ' trotteur(s)',
+    people_count: (1..6).to_a.sample.to_s + "trotteur(s)",
     destination_type: ['Ville', 'Campagne', 'Mer'].sample,
     status: 'Paid'
   )

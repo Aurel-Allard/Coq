@@ -12,13 +12,13 @@ class Pricing
   def amount
     case number_of_days
     when 0
-      90 * @people_count
+      90
     when 1
-      120 * @people_count
+      120
     when 2
-      170 * @people_count
+      170
     when 3..(1.0/0.0)
-      65 * @people_count
+      65
     end
   end
 end
