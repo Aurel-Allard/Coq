@@ -2,7 +2,7 @@
   <div class="summary-block">
     <div class="summary-content">
       <h2>Votre réservation</h2>
-      <h3 style="margin-bottom: 10px;"><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
+      <h3 style="margin-bottom: 10px;"><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.start_date %></h3>
       <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise ? "Séjour surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
         <p>N<%= @journey.id %>LCT</p>
