@@ -22,8 +22,8 @@
   <div class="summary-block">
     <div class="summary-content">
       <h2>Vérifications et Paiement</h2>
-      <h3 style="margin-bottom: 10px;"><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.date %></h3>
-      <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
+      <h3 style="margin-bottom: 10px;"><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.start_date %></h3>
+      <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise? ? "Ce séjour est une surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
         <p>N<%= @journey.id %>LCT</p>
       <h4>Nom de réservation</h4>
@@ -43,17 +43,9 @@
         <h4><%= @amount / 100 %>€</h4>
       </div>
 
-      <%= form_tag journey_charges_path(@journey) do %>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="Mon Séjour"
-          data-email="<%= @journey.user.email %>"
-          data-description="Commande N<%= @journey.id %>LCT"
-          data-amount="<%= @amount %>"
-          data-currency="eur"
-          data-label="Paiement">
-        </script>
-      <% end %>
+<!-- Just for testing period -->
+      <%= link_to 'Payer', pages_confirmation_path, class: "btn btn-primary btn-banner", style: "text-align: center;" %>
+      <% @journey.update(status: "Paid") %>
     </div>
   </div>
 </div>
