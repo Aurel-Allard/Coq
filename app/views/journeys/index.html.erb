@@ -31,8 +31,8 @@
             <td><%= journey.origin %></td>
             <td><%= journey.people_count %></td>
             <td><%= journey.destination_type %></td>
-            <td><%= journey.detail.is_a_surprise? ? "Oui":"Non" %></td>
-            <td><%= journey.detail.travel_with_car? ? "Oui":"Non" %></td>
+            <td><%= journey.detail.is_a_surprise ? "Oui":"Non" %></td>
+            <td><%= journey.detail.travel_with_car ? "Oui":"Non" %></td>
             <td><%= journey.detail.housing_type %></td>
             <td><%= journey.detail.activity_type %></td>
             <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal-<%= i %>">Infos client</button></td>

@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="price">
-    <h4><%= @amount / 100 %>€</h4>
+    <h4><%= @journey.detail.price_cents / 100 %>€</h4>
   </div>
 </div>
 <div class="empty-steps-div"></div>
@@ -23,7 +23,7 @@
     <div class="summary-content">
       <h2>Vérifications et Paiement</h2>
       <h3 style="margin-bottom: 10px;"><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.start_date %></h3>
-      <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise? ? "Ce séjour est une surprise !" : "" %></h3>
+      <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
         <p>N<%= @journey.id %>LCT</p>
       <h4>Nom de réservation</h4>

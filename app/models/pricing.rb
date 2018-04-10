@@ -1,9 +1,8 @@
 class Pricing
-  def initialize(journey, start_date, end_date, people_count)
+  def initialize(journey, start_date, end_date)
     @journey = journey
     @start_date = start_date
     @end_date = end_date
-    @people_count = people_count
   end
 
   def number_of_days
@@ -13,41 +12,43 @@ class Pricing
   def base_price
     case number_of_days
     when 0
-      90
+      89
     when 1
-      120
+      119
     when 2
-      170
+      169
     when 3..(1.0/0.0)
       65
     end
   end
 
-  def transport(base_price)
-    if @journey.detail.travel_with_car?
+  def transport
+    if @journey.detail.travel_with_car
       case number_of_days
       when 0
-        90
+        -30
       when 1
-        120
+        -30
       when 2
-        170
+        -40
       when 3..(1.0/0.0)
-        65
+        -20
       end
+    else
+      0
     end
   end
 
   def housing
-    29 * number_of_days if @journey.detail.housing_type == 'Hébergement de charme'
+    @journey.detail.housing_type == 'Hébergement de charme' ? 25 * number_of_days : 0
   end
 
   def activity
-    18 if @journey.detail.activity_type != 'Aucune'
+    @journey.detail.activity_type != 'Aucune' ? 18 : 0
   end
 
   def amount
-    #base_price + housing + activity
-    100
+    total = base_price + transport + housing + activity
+    ((total / 100) % 10 * 100 + (total / 10) % 10 * 10 + 9) * 100
   end
 end

@@ -19,9 +19,15 @@ class DetailsController < ApplicationController
       @detail.start_date = params[:start_date]
       @detail.end_date = params[:end_date]
 
+      # start_date = @detail.start_date
+      # end_date = @detail.end_date
+      # people_count = @journey.people_count.to_i
+      pricing = Pricing.new(@journey, @detail.start_date, @detail.end_date).amount
+      @journey.detail.price_cents = pricing
+
       @journey.update(status: "Details created")
 
-      if @detail.save
+      if @detail.save!
         redirect_to new_journey_user_path(@journey)
       else
         render :new
