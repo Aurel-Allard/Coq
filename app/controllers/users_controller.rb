@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end_date = @journey.detail.end_date
     people_count = @journey.people_count.to_i
 
-    @pricing = Pricing.new(start_date, end_date, people_count)
+    @pricing = Pricing.new(@journey, start_date, end_date, people_count)
     @pricing.number_of_days
 
     if not @journey.booking_ip == request.remote_ip && @journey.status = "Details created"

@@ -2,8 +2,6 @@ class DetailsController < ApplicationController
   before_action :set_journey
 
   def new
-      # nb = Pricing.new
-      # @diff = DatesSelection
 
       if @journey.booking_ip == request.remote_ip && @journey.status = "Journey created"
         @detail = Detail.new
@@ -22,7 +20,7 @@ class DetailsController < ApplicationController
       @detail.end_date = params[:end_date]
 
       @journey.update(status: "Details created")
-
+raise
       if @detail.save
         redirect_to new_journey_user_path(@journey)
       else
