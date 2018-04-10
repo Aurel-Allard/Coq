@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180308124212) do
   enable_extension "plpgsql"
 
   create_table "details", force: :cascade do |t|
-    t.boolean "is_a_surprise?"
+    t.boolean "is_a_surprise", default: false, null: false
     t.date "start_date"
     t.date "end_date"
     t.string "housing_type"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180308124212) do
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
     t.string "price_currency", default: "EUR", null: false
-    t.boolean "travel_with_car?"
+    t.boolean "travel_with_car", default: false, null: false
     t.index ["journey_id"], name: "index_details_on_journey_id"
   end
 

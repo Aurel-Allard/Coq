@@ -27,8 +27,8 @@
         <div id="date-change">
           <%= react_component("DatesSelection") %>
         </div>
-        <%= f.input :is_a_surprise?, label: 'Ce séjour est une surprise' %>
-        <%= f.input :travel_with_car?, label: 'Je prends ma voiture plutôt que le train' %>
+        <%= f.input :is_a_surprise, label: 'Ce séjour est une surprise', as: :boolean %>
+        <%= f.input :travel_with_car, label: 'Je prends ma voiture plutôt que le train' %>
         <%= f.input :housing_type, prompt: "Type de logement*", collection: ['Nid douillet', 'Hébergement de charme'], error: 'Merci de préciser le type de logement désiré !' %>
         <%= f.input :activity_type, prompt: "Activité (en option)*", collection: ['Aucune', 'Sport', 'Gastronomie', 'Culture'], error: 'Veuillez indiquer si vous désirez (ou non !) une activité.' %>
         <h3>Points d'attention*</h3>
