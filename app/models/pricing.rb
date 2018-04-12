@@ -18,7 +18,7 @@ class Pricing
     when 2
       169
     when 3..(1.0/0.0)
-      65
+      65 * number_of_days
     end
   end
 
