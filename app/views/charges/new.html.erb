@@ -14,7 +14,8 @@
     </div>
   </div>
   <div class="price">
-    <h4><%= @journey.detail.price_cents / 100 %>€</h4>
+      <h4 style="font-size: 20px;"><%= @journey.detail.price_cents / 100 %>€</h4>
+      <h4>par personne</h4>
   </div>
 </div>
 <div class="empty-steps-div"></div>
@@ -22,7 +23,8 @@
   <div class="summary-block">
     <div class="summary-content">
       <h2>Vérifications et Paiement</h2>
-      <h3 style="margin-bottom: 10px;"><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %> le <%= @journey.detail.start_date %></h3>
+      <h3><%= @journey.people_count.to_i %> voyageurs au départ de <%= @journey.origin %></h3>
+      <h3><%= @journey.detail.start_date.strftime("%d-%m-%Y") %> -> <%= @journey.detail.end_date.strftime("%d-%m-%Y") %></h3>
       <h3 style="margin-top: 0;"><%= @journey.detail.is_a_surprise ? "Ce séjour est une surprise !" : "" %></h3>
       <h4>Numéro de commande</h4>
         <p>N<%= @journey.id %>LCT</p>
@@ -39,8 +41,12 @@
           <p><%= @journey.detail.points_of_attention %></p>
         <% end %>
       <div class="summary-price">
+        <h4>Prix par personne</h4>
+        <h4><%= @journey.people_count.to_i %> trotteur(s) x <%= @journey.detail.price.cents / 100 %>€</h4>
+      </div>
+      <div class="summary-price total">
         <h4>TOTAL</h4>
-        <h4><%= @amount / 100 %>€</h4>
+        <h4><%= @journey.people_count.to_i * @journey.detail.price.cents / 100 %>€</h4>
       </div>
 
 <!-- Just for testing period -->

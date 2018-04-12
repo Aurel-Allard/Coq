@@ -26,13 +26,13 @@ class Pricing
     if @journey.detail.travel_with_car
       case number_of_days
       when 0
-        -30
+        -25
       when 1
         -30
       when 2
         -40
       when 3..(1.0/0.0)
-        -20
+        -40
       end
     else
       0

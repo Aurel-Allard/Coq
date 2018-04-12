@@ -24,7 +24,7 @@ class DetailsController < ApplicationController
 
       @journey.update(status: "Details created")
 
-      if @detail.save!
+      if @detail.save
         redirect_to new_journey_user_path(@journey)
       else
         render :new
