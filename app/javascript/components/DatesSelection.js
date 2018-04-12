@@ -1,4 +1,5 @@
 import React from "react"
+import ReactDOM from 'react-dom';
 import PropTypes from "prop-types"
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
@@ -13,6 +14,11 @@ class DatesSelection extends React.Component {
       focusedInput: null,
       displayFormat: "DD/MM/YYYY",
     };
+  }
+
+  componentDidUpdate() {
+    window.start_date = this.state.startDate;
+    window.end_date = this.state.endDate;
   }
 
   render() {
@@ -45,6 +51,7 @@ class DatesSelection extends React.Component {
             endDatePlaceholderText = "Retour"
             isDayBlocked = {isDayBlocked}
             isDayHighlighted = {isDayHighlighted}
+            hideKeyboardShortcutsPanel
           />
         </div>
       </div>

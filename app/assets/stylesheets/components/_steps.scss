@@ -43,13 +43,18 @@
 
 .price {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-item: center;
+  height: 70px;
   right: 0%;
   border-left: 1px solid $medium-gray;
   width: 180px;
   text-align: center;
+  font-family: Raleway;
+  color: white;
   h4 {
-    color: white;
-    font-size: 20px;
-    padding: 20px;
+    margin: 0;
   }
 }

@@ -19,6 +19,10 @@ class JourneysController < ApplicationController
     authorize @journey
     @journey.booking_ip = request.remote_ip
     @journey.status = "Journey created"
+
+    number_of_people = @journey.people_count[/[123456789]/]
+    @journey.update(people_count: number_of_people)
+
     if @journey.save
       redirect_to new_journey_detail_path(@journey)
     else

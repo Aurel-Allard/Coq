@@ -1,7 +1,7 @@
 class DetailsController < ApplicationController
+  before_action :set_journey
+
   def new
-      @journey = Journey.find(params[:journey_id])
-      authorize @journey
 
       if @journey.booking_ip == request.remote_ip && @journey.status = "Journey created"
         @detail = Detail.new
@@ -12,17 +12,18 @@ class DetailsController < ApplicationController
     end
 
     def create
-      @journey = Journey.find(params[:journey_id])
       @detail = Detail.new(details_params)
-
-      authorize @journey
       authorize @detail
-
-      @journey.update(status: "Details created")
 
       @detail.journey = @journey
       @detail.start_date = params[:start_date]
       @detail.end_date = params[:end_date]
+
+      pricing = Pricing.new(@journey, @detail.start_date, @detail.end_date).amount
+      @journey.detail.price_cents = pricing
+
+      @journey.update(status: "Details created")
+
       if @detail.save
         redirect_to new_journey_user_path(@journey)
       else
@@ -33,6 +34,11 @@ class DetailsController < ApplicationController
     private
 
     def details_params
-      params.require(:detail).permit(:is_a_surprise, :housing_type, :activity_type, :points_of_attention)
+      params.require(:detail).permit(:is_a_surprise, :travel_with_car, :housing_type, :activity_type, :points_of_attention)
+    end
+
+    def set_journey
+      @journey = Journey.find(params[:journey_id])
+      authorize @journey
     end
 end

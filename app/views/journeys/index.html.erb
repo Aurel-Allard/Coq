@@ -11,6 +11,7 @@
         <th>Nombre</th>
         <th>Destination</th>
         <th>Surprise</th>
+        <th>Voiture</th>
         <th>Logement</th>
         <th>Activité</th>
         <th>Points d'attention</th>
@@ -25,12 +26,13 @@
           <tr data-toggle="modal<%= i %>" data-id="<%= i %>" >
             <td><%= journey.id %></td>
             <td class="journey-user"><%= journey.user.name + " " + journey.user.surname %></td>
-            <td><%= journey.detail.date %></td>
-            <td></td>
+            <td><%= journey.detail.start_date %></td>
+            <td><%= journey.detail.end_date %></td>
             <td><%= journey.origin %></td>
             <td><%= journey.people_count %></td>
             <td><%= journey.destination_type %></td>
             <td><%= journey.detail.is_a_surprise ? "Oui":"Non" %></td>
+            <td><%= journey.detail.travel_with_car ? "Oui":"Non" %></td>
             <td><%= journey.detail.housing_type %></td>
             <td><%= journey.detail.activity_type %></td>
             <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal-<%= i %>">Infos client</button></td>
