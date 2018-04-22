@@ -40,15 +40,15 @@ class Pricing
   end
 
   def housing
-    @journey.detail.housing_type == 'Hébergement de charme' ? 0 #25 * number_of_days : 0
+    @journey.detail.housing_type == 'Hébergement de charme' ? 0 * number_of_days : 0
   end
 
   def activity
-    @journey.detail.activity_type != 'Aucune' ? 0 #18 : 0
+    @journey.detail.activity_type != 'Aucune' ? 0 : 0
   end
 
   def amount
     total = base_price + transport + housing + activity
-    ((total / 100) % 10 * 100 + (total / 10) % 10 * 10 + 9) * 100
+    0 #((total / 100) % 10 * 100 + (total / 10) % 10 * 10 + 9) * 100
   end
 end
