@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @journey.token = "123456"
     @user.password = @journey.token
     @user.journey = @journey
-    if @user.save!
+    if @user.save
       redirect_to new_journey_charge_path(@journey)
     else
       render :new
