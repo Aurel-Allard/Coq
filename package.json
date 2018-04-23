@@ -6,10 +6,13 @@
     "babel-preset-react": "^6.24.1",
     "bootstrap": "3",
     "jquery": "^3.3.1",
+    "moment": "^2.22.1",
+    "npm": "^5.8.0",
     "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dates": "^16.3.6",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.2",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-dates": "^16.6.1",
+    "react-dom": "^16.3.2",
     "react_ujs": "^2.4.4"
   },
   "devDependencies": {
